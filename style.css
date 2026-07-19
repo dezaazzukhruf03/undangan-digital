@@ -316,38 +316,120 @@ button {
     box-shadow:0 15px 30px rgba(0,0,0,.35);
 }
 
+/* ==========================
+   COVER CONTENT
+========================== */
+
 .cover-content{
+
     position:absolute;
-    left:50%;
-    bottom:30px;
 
-    transform:translateX(-50%);
+    inset:0;
 
-    width:90%;
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    align-items:center;
 
     text-align:center;
 
-    color:white;
+    color:#fff;
+
+    padding:70px 25px 70px;
 
     z-index:10;
-}
 
-.cover-content h1{
-    font-size:44px;
-    font-family:"Cinzel", serif;
-    margin:15px 0;
-    text-shadow:
-        0 3px 12px rgba(0,0,0,.5),
-        0 0 20px rgba(255,255,255,.15);
 }
 
 .cover-content h4{
-    margin-bottom:250px;
+
+    position:absolute;
+
+    top:90px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:100%;
+
+    margin:0;
+
     font-size:20px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    text-shadow:0 3px 10px rgba(0,0,0,.45);
+
 }
 
-.cover-content p {
-  margin-bottom: 50px;
+.cover-content h1{
+
+    font-family:"Cinzel",serif;
+
+    font-size:44px;
+
+    margin:0 0 15px;
+
+    line-height:1.1;
+
+    text-shadow:
+        0 3px 12px rgba(0,0,0,.55),
+        0 0 20px rgba(255,255,255,.18);
+
+}
+
+.cover-date{
+
+    margin:0 0 30px;
+
+    font-size:18px;
+
+}
+
+.guest-box{
+
+    margin:0 0 30px;
+
+    color:#fff;
+
+}
+
+.guest-box p{
+
+    font-size:15px;
+
+    margin-bottom:6px;
+
+}
+
+.guest-box h3{
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+#openInvitation{
+
+    margin:0;
+
+    padding:16px 42px;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+    box-shadow:0 8px 25px rgba(200,155,60,.35);
+
 }
 
 .cover-content {
@@ -1132,9 +1214,19 @@ button {
 
     }
 
+@media (max-width:430px){
+
     .cover-content{
 
-        bottom:40px;
+        padding:60px 20px 55px;
+
+    }
+
+    .cover-content h4{
+
+        top:70px;
+
+        font-size:18px;
 
     }
 
@@ -1144,19 +1236,13 @@ button {
 
     }
 
-    .cover-content h4{
+    .cover-date{
 
-        margin-bottom:230px;
-
-        font-size:18px;
+        font-size:16px;
 
     }
 
-    #openInvitation{
-
-        margin-bottom:90px;
-
-    }
+}
 
 }
 
