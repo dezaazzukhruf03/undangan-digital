@@ -20,42 +20,40 @@ window.addEventListener("load",function(){
 
 });
 
+const openBtn = document.getElementById("openInvitation");
+const coverScreen = document.getElementById("cover-screen");
+
+const music = document.getElementById("music");
+const musicBtn = document.getElementById("musicBtn");
+
+music.volume = 0.5;
+
+openBtn.addEventListener("click", function () {
+
+    coverScreen.classList.add("fade-out");
+
+    music.play();
+
+    musicBtn.style.display = "flex";
+
+    musicBtn.classList.add("playing");
+
+    setTimeout(() => {
+
+        coverScreen.style.display = "none";
+
+        startAutoScroll();
+
+    }, 800);
+
+});
+
 const SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbwrHji0oU0VPiLM7lhkhGMd53HvzZJplOXwqRYE-ox-z_f4rGo1FluF_EgG6mU6Bpc/exec";
 
 // ===============================
 // BUKA UNDANGAN
 // ===============================
-
-window.onload = function () {
-  const openBtn = document.getElementById("openInvitation");
-  const coverScreen = document.getElementById("cover-screen");
-
-  const music=document.getElementById("music");
-const musicBtn=document.getElementById("musicBtn");
-
-music.volume=0.5;
-
-  openBtn.onclick = function () {
-
-    coverScreen.classList.add("fade-out");
-
-    music.play();
-
-    musicBtn.style.display="flex";
-
-    musicBtn.classList.add("playing");
-
-    setTimeout(() => {
-
-        coverScreen.style.display="none";
-
-        startAutoScroll();
-
-    },800);
-
-};
-};
 
 // ===============================
 // COUNTDOWN
