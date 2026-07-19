@@ -1,1267 +1,1155 @@
+/* ==========================================================
+   WEDDING INVITATION CSS V2
+   Author  : Deza Azzukhruf
+   Version : 2.0
+   Layout  : Mobile First
+========================================================== */
+
+/* ==========================================================
+   1. ROOT VARIABLE
+========================================================== */
+
 :root {
   --cream: #f7f0df;
-  --gold: #c89b3c;
-  --dark-gold: #9c6b16;
-  --brown: #7a4b2a;
+
   --soft: #fffaf1;
+
+  --gold: #c89b3c;
+
+  --gold-dark: #9c6b16;
+
+  --brown: #7a4b2a;
+
+  --white: #ffffff;
+
+  --black: #000000;
+
+  --text: #555;
+
+  --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  --radius: 25px;
+
+  --transition: 0.35s ease;
+}
+
+/* ==========================================================
+   2. RESET
+========================================================== */
+
+* {
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: "Poppins", sans-serif;
-  background: #7a4b2a;
+
+  background: var(--brown);
+
+  color: var(--text);
+
   overflow-x: hidden;
 }
 
-.container {
-  max-width: 430px;
-  margin: auto;
-  background: var(--cream);
-  min-height: 100vh;
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 100px;
-}
+/* ==========================================================
+   3. GLOBAL
+========================================================== */
 
-.ornament {
+img {
+  display: block;
+
   width: 100%;
-}
-
-.hero {
-  padding: 65px 25px 40px;
-  text-align: center;
-}
-
-.hero h3 {
-  font-size:18px;
-  color: var(--brown);
-  margin-bottom: 10px;
-}
-
-.rumah-gadang{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    margin:18px 0 20px;
-}
-
-.rumah-gadang img{
-
-    width:200px;
-
-    height:auto;
-
-    display:block;
-
-    filter:drop-shadow(
-        0 3px 8px rgba(200,155,60,.18)
-    );
-
-}
-
-.hero h1 {
-  text-shadow: 0 0 10px rgba(200, 155, 60, 0.3);
-  letter-spacing: 2px;
-  font-family: "Cinzel", serif;
-  color: var(--gold);
-  font-size: 40px;
-  line-height: 1.2;
-  margin: 20px 0;
-}
-
-.date {
-  color: var(--brown);
-  margin-bottom: 30px;
-}
-
-#guestName {
-  font-size: 22px;
-  font-weight: bold;
 }
 
 button {
-  background: linear-gradient(to right, var(--dark-gold), var(--gold));
-
-  color: white;
   border: none;
-  padding: 15px 35px;
-  border-radius: 50px;
-  font-size: 16px;
+
+  outline: none;
+
   cursor: pointer;
+
+  font-family: inherit;
 }
 
-.photo-frame {
-  border: 4px solid var(--gold);
-  border-radius: 220px 220px 25px 25px;
-  overflow: hidden;
-  margin-bottom: 35px;
+input,
+textarea,
+select {
+  font-family: inherit;
 
-  box-shadow: 0 10px 30px rgba(200, 155, 60, 0.15);
+  outline: none;
 }
 
-.photo-frame img {
+a {
+  text-decoration: none;
+}
+
+/* ==========================================================
+   4. CONTAINER
+========================================================== */
+
+.container {
   width: 100%;
-  height: 500px;
-  object-fit: cover;
-  display: block;
 
-  transition: 0.5s;
-}
+  max-width: 430px;
 
-.photo-frame img:hover {
-  transform: scale(1.05);
-}
+  margin: auto;
 
-.profile-card {
-  border: 4px solid var(--gold);
-  border-radius: 200px 200px 20px 20px;
+  background: var(--cream);
+
+  min-height: 100vh;
+
+  position: relative;
+
   overflow: hidden;
-  margin-bottom: 30px;
-  background: var(--soft);
-  border-radius: 30px;
-  padding: 30px 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+  padding-bottom: 100px;
 }
 
-.profile-card img{
-    width:100%;
-    height:420px;
-    display:block;
-    object-fit:cover;
+/* ==========================================================
+   5. SECTION
+========================================================== */
 
-    border-radius:200px 200px 20px 20px;
-    border:3px solid var(--gold);
+.section {
+  padding: 60px 25px;
 
-    margin-bottom:20px;
-
-    transition:.5s;
-}
-
-.profile-card img:hover {
-  transform: scale(1.05);
-}
-
-.arabic {
-  font-size: 18px;
-
-  font-weight: 500;
-
-  color: #9c6b16;
-
-  margin-top: 20px;
-}
-
-.text {
-  color: #555;
-  line-height: 1.8;
-}
-
-.profile-card h2 {
-  color: var(--gold);
-  font-family: "Cinzel", serif;
-  margin-bottom: 15px;
+  text-align: center;
 }
 
 .title {
   font-family: "Cinzel", serif;
+
   color: var(--gold);
-  text-align: center;
+
   font-size: 40px;
-  margin-bottom: 25px;
+
   line-height: 1.2;
+
+  margin-bottom: 25px;
 }
 
-.event-card {
-  background: white;
-  padding: 35px 25px;
-  border-radius: 25px;
-  line-height: 2;
-  margin-bottom: 30px;
-  overflow: hidden;
-  border-radius: 25px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+.text {
+  line-height: 1.8;
+
+  color: var(--text);
 }
 
-.countdown {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+/* ==========================================================
+   6. BUTTON
+========================================================== */
+
+button {
+  background: linear-gradient(
+    to right,
+
+    var(--gold-dark),
+    var(--gold)
+  );
+
+  color: var(--white);
+
+  border-radius: 40px;
+
+  padding: 16px 40px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition: var(--transition);
 }
 
-.time-box {
-  background: linear-gradient(to bottom, var(--gold), var(--dark-gold));
-
-  color: white;
-  padding: 15px 10px;
-  border-radius: 15px;
-  font-size: 14px;
+button:hover {
+  transform: translateY(-2px);
 }
 
-.time-box span {
-  display: block;
-  font-size: 24px;
-  font-weight: bold;
+/* ==========================================================
+   7. HERO
+========================================================== */
+
+.hero {
+  padding: 70px 25px 45px;
+
+  text-align: center;
 }
 
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
+.hero h3 {
+  color: var(--brown);
 
-  width:min(430px,100vw);
-
-  left: 50%;
-  transform: translateX(-50%);
-
-  background: rgba(200, 155, 60, 0.95);
-  backdrop-filter: blur(10px);
-
-  display: flex;
-  justify-content: space-around;
-
-  padding: 15px 0;
-
-  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.12);
-
-  z-index: 1000;
-
-  justify-content:space-evenly;
-}
-
-.bottom-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1px;
-  transition:.3s;
-  transform: translateY(-3px);
-  transform: scale(1.1);
-  opacity: 0.65;
-  transition: 0.3s;
-}
-
-.bottom-nav a.active{
-    color:#d4af37;
-    opacity: 1;
-    transform: scale(1.15) translateY(-2px);
-}
-
-.bottom-nav a.active i{
-    transform:translateY(-2px);
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-}
-
-.bottom-nav i {
   font-size: 18px;
+
+  letter-spacing: 2px;
 }
+
+.rumah-gadang {
+  display: flex;
+
+  justify-content: center;
+
+  margin: 20px 0;
+}
+
+.rumah-gadang img {
+  width: 190px;
+
+  filter: drop-shadow(0 4px 12px rgba(200, 155, 60, 0.2));
+}
+
+.hero h1 {
+  font-family: "Cinzel", serif;
+
+  color: var(--gold);
+
+  font-size: 42px;
+
+  line-height: 1.2;
+
+  margin: 18px 0;
+
+  text-shadow: 0 3px 10px rgba(200, 155, 60, 0.18);
+}
+
+.date {
+  color: var(--brown);
+
+  margin-bottom: 28px;
+}
+
+.intro {
+  max-width: 320px;
+
+  margin: auto;
+
+  line-height: 1.8;
+}
+
+/* ==========================================================
+   8. COVER SCREEN
+========================================================== */
 
 #cover-screen {
   position: fixed;
-  top: 0;
-  left: 0;
 
-  width: 100%;
-  height: 100dvh;
-
-  background: rgba(0, 0, 0, 0.5);
+  inset: 0;
 
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
+  background: rgba(0, 0, 0, 0.45);
 
   z-index: 9999;
 
-  transition: 3s;
+  transition: 0.8s;
 }
 
-.cover-box{
+.cover-box {
+  position: relative;
 
-    position:relative;
+  width: 100%;
 
-    width:100%;
-    max-width:430px;
+  max-width: 430px;
 
-    min-height:100dvh;
-    height:100dvh;
+  height: 100dvh;
 
-    overflow:hidden;
-
+  overflow: hidden;
 }
 
-.cover-main-photo{
-    width:260px;
-    height:340px;
+.cover-image {
+  position: absolute;
 
-    object-fit:cover;
+  inset: 0;
 
-    border-radius:180px 180px 20px 20px;
+  width: 100%;
 
-    border:4px solid #c89b3c;
+  height: 100%;
 
-    margin-bottom:25px;
-
-    box-shadow:0 15px 30px rgba(0,0,0,.35);
+  object-fit: cover;
 }
 
-/* ==========================
-   COVER CONTENT
-========================== */
+.cover-overlay {
+  position: absolute;
 
-.cover-content{
+  inset: 0;
 
-    position:absolute;
+  background: linear-gradient(
+    to bottom,
 
-    inset:0;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-end;
-
-    align-items:center;
-
-    text-align:center;
-
-    color:#fff;
-
-    padding:70px 25px 70px;
-
-    z-index:10;
-
-}
-
-.cover-content h4{
-
-    position:absolute;
-
-    top:90px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:100%;
-
-    margin:0;
-
-    font-size:20px;
-
-    font-weight:600;
-
-    letter-spacing:1px;
-
-    text-shadow:0 3px 10px rgba(0,0,0,.45);
-
-}
-
-.cover-content h1{
-
-    font-family:"Cinzel",serif;
-
-    font-size:44px;
-
-    margin:0 0 15px;
-
-    line-height:1.1;
-
-    text-shadow:
-        0 3px 12px rgba(0,0,0,.55),
-        0 0 20px rgba(255,255,255,.18);
-
-}
-
-.cover-date{
-
-    margin:0 0 30px;
-
-    font-size:18px;
-
-}
-
-.guest-box{
-
-    margin:0 0 30px;
-
-    color:#fff;
-
-}
-
-.guest-box p{
-
-    font-size:15px;
-
-    margin-bottom:6px;
-
-}
-
-.guest-box h3{
-
-    font-size:22px;
-
-    font-weight:600;
-
-}
-
-#openInvitation{
-
-    margin:0;
-
-    padding:16px 42px;
-
-    border-radius:40px;
-
-    font-weight:600;
-
-    letter-spacing:.5px;
-
-    box-shadow:0 8px 25px rgba(200,155,60,.35);
-
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.7)
+  );
 }
 
 .cover-content {
-  animation: fadeIn 2s;
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  text-align: center;
+
+  color: white;
+
+  padding: 65px 25px 65px;
+
+  z-index: 10;
 }
 
-.cover-photo{
+/* ==========================================================
+   9. COVER CONTENT
+========================================================== */
 
-    width:230px;
+.cover-content h4 {
+  position: absolute;
 
-    margin:25px auto;
+  top: 70px;
 
-    border:4px solid var(--gold);
+  left: 50%;
 
-    border-radius:220px 220px 25px 25px;
+  transform: translateX(-50%);
 
-    overflow:hidden;
+  width: 100%;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.35);
+  font-family: "Poppins", sans-serif;
 
+  font-size: 18px;
+
+  font-weight: 500;
+
+  letter-spacing: 2px;
+
+  color: #fff;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
-.cover-photo img{
+.cover-content h1 {
+  font-family: "Cinzel", serif;
 
-    width:100%;
+  font-size: 44px;
 
-    display:block;
+  line-height: 1.1;
 
-}
+  color: #fff;
 
-.cover-image{
-    position:absolute;
-    top:0;
-    left:0;
+  margin-bottom: 18px;
 
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
 }
 
 .cover-date {
-  margin: 15px 0 25px;
-}
+  font-size: 17px;
 
-.cover-overlay{
-    position:absolute;
-    inset:0;
+  color: #fff;
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,.15),
-            rgba(0,0,0,.25),
-            rgba(0,0,0,.55),
-            rgba(0,0,0,.70)
-        );
+  margin-bottom: 28px;
 }
 
 .guest-box {
-  color: white;
-  margin: 20px 0 30px;
-  margin-top: 35px;
   margin-bottom: 30px;
-  color: var(--brown);
+
+  text-align: center;
+
+  color: #fff;
 }
 
 .guest-box p {
-  margin: 0;
   font-size: 14px;
-  letter-spacing: 1px;
-  opacity: 0.9;
+
+  opacity: 0.95;
+
+  margin-bottom: 8px;
 }
 
 .guest-box h3 {
-  margin-top: 5px;
-  font-size: 20px;
+  font-size: 22px;
+
   font-weight: 600;
+
+  line-height: 1.4;
 }
 
 .guest-box.hidden {
   display: none;
 }
 
-#openInvitation{
+#openInvitation {
+  min-width: 210px;
 
-    border-radius:40px;
-
-    padding:16px 42px;
-
-    font-weight:600;
-
-    letter-spacing:.5px;
-
-    box-shadow:
-        0 8px 25px rgba(200,155,60,.35);
-
-    margin-bottom:150px
+  box-shadow: 0 10px 25px rgba(200, 155, 60, 0.35);
 }
 
-#openInvitation:hover {
-  transform: scale(1.05);
+/* ==========================================================
+   10. COUNTDOWN
+========================================================== */
+
+.countdown {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 10px;
+
+  margin-top: 40px;
 }
 
-.bottom-left {
-  bottom: -5px;
-  left: -5px;
+.time-box {
+  background: linear-gradient(
+    to bottom,
 
-  transform: rotate(-8deg);
+    var(--gold),
+    var(--gold-dark)
+  );
 
-  animation: moveLeftRight 4s ease-in-out infinite;
-}
+  color: #fff;
 
-.bottom-right {
-  bottom: -5px;
-  right: -5px;
+  border-radius: 16px;
 
-  transform: scaleX(-1) rotate(-8deg);
+  padding: 14px 6px;
 
-  animation: moveRightLeft 4s ease-in-out infinite;
-}
-
-@keyframes moveLeftRight {
-  0% {
-    margin-left: 0px;
-  }
-
-  50% {
-    margin-left: 10px;
-  }
-
-  100% {
-    margin-left: 0px;
-  }
-}
-
-@keyframes moveRightLeft {
-  0% {
-    margin-right: 0px;
-  }
-
-  50% {
-    margin-right: 10px;
-  }
-
-  100% {
-    margin-right: 0px;
-  }
-}
-
-.fade-out {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.intro {
-  margin-top: 20px;
-  max-width: 320px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.section {
-  padding: 60px 25px;
   text-align: center;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
+.time-box span {
+  display: block;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  margin-bottom: 5px;
+}
+
+.time-box small {
+  font-size: 11px;
+}
+
+.mini-countdown {
+  margin-top: 35px;
+}
+
+/* ==========================================================
+   11. PHOTO FRAME
+========================================================== */
+
+.photo-frame {
+  overflow: hidden;
+
+  border: 4px solid var(--gold);
+
+  border-radius: 220px 220px 25px 25px;
+
+  box-shadow: var(--shadow);
+
+  margin-bottom: 35px;
+
+  background: #fff;
+}
+
+.photo-frame img {
+  width: 100%;
+
+  height: 500px;
+
+  object-fit: cover;
+
+  transition: 0.4s;
+}
+
+.photo-frame:hover img {
+  transform: scale(1.03);
+}
+
+.arabic {
+  margin-top: 20px;
+
+  color: var(--gold-dark);
+
+  line-height: 1.9;
+
+  font-size: 17px;
+}
+
+/* ==========================================================
+   12. PROFILE CARD
+========================================================== */
 
 .profile-card {
+  background: var(--soft);
+
+  border-radius: 30px;
+
+  padding: 28px 20px;
+
+  box-shadow: var(--shadow);
+
   margin-bottom: 35px;
 }
 
-.location iframe {
+.profile-card img {
   width: 100%;
 
-  display: block;
+  height: 420px;
 
-  margin: 20px auto 0 auto;
+  object-fit: cover;
 
-  border-radius: 20px;
+  border-radius: 220px 220px 25px 25px;
 
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 3px solid var(--gold);
+
+  margin-bottom: 22px;
+
+  transition: 0.4s;
 }
 
-.countdown-box {
-  border-radius: 18px;
+.profile-card:hover img {
+  transform: scale(1.03);
 }
 
-.countdown-box {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-}
-
-.gallery {
-  margin-top: 60px;
-}
-
-.gift-text {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #666;
-  margin-bottom: 30px;
-}
-
-.gift-card {
-  background: white;
-  padding: 25px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-}
-
-.gift-card h3 {
-  color: var(--gold);
-  margin-bottom: 10px;
+.profile-card h2 {
   font-family: "Cinzel", serif;
-}
 
-.rekening {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  letter-spacing: 1px;
-}
-
-.closing {
-  padding-bottom: 120px;
-}
-
-.closing-text {
-  line-height: 1.8;
-  color: #666;
-  margin-bottom: 25px;
-  font-size: 14px;
-}
-
-.closing-name {
-  font-family: "Cinzel", serif;
   color: var(--gold);
+
+  margin-bottom: 12px;
+
   font-size: 30px;
 }
 
-#event .title {
-  padding-top: 10px;
-  margin-top: 10px;
+.profile-card p {
+  line-height: 1.8;
+
+  color: var(--text);
+}
+
+/* ==========================================================
+   13. EVENT
+========================================================== */
+
+.event-card {
+  background: #fff;
+
+  border-radius: 25px;
+
+  padding: 28px 22px;
+
+  margin-bottom: 30px;
+
+  line-height: 2;
+
+  box-shadow: var(--shadow);
 }
 
 .location-card {
-  background: white;
-  padding: 20px;
+  background: #fff;
+
+  padding: 18px;
+
   border-radius: 25px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  margin-bottom: 35px;
+
+  box-shadow: var(--shadow);
 }
 
 .location-card iframe {
   display: block;
+
   width: 100%;
-  border-radius: 15px;
+
+  border-radius: 18px;
 }
 
-.copy-btn {
-  background: var(--gold);
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  margin: 10px 0;
-}
+/* ==========================================================
+   14. GIFT
+========================================================== */
 
 .rekening {
-  background: white;
-  border-radius: 25px;
-  padding: 20px;
-  margin: 15px 0;
-
   display: flex;
-  justify-content: center;
+
+  justify-content: space-between;
+
   align-items: center;
-  gap: 10px;
 
-  font-size: 24px;
-  font-weight: 700;
+  gap: 15px;
 
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  background: #fff;
+
+  padding: 18px 22px;
+
+  margin: 18px 0 10px;
+
+  border-radius: 18px;
+
+  box-shadow: var(--shadow);
+
+  font-weight: 600;
+
+  color: var(--brown);
+
+  word-break: break-all;
 }
 
 .copy-icon {
-  background: none;
-  border: none;
-  cursor: pointer;
+  width: 46px;
 
-  color: var(--gold);
+  height: 46px;
+
+  padding: 0;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+.copy-icon i {
   font-size: 18px;
-
-  transition: 0.3s;
 }
 
-.copy-icon:hover {
-  transform: scale(1.15);
-}
+/* ==========================================================
+   15. FORM UCAPAN
+========================================================== */
 
-.mini-countdown {
-  margin-top: 40px;
-  gap: 8px;
-}
+#wishForm {
+  display: flex;
 
-.mini-countdown .time-box {
-  padding: 10px 5px;
-  border-radius: 12px;
-}
+  flex-direction: column;
 
-.mini-countdown .time-box span {
-  font-size: 20px;
-}
+  gap: 18px;
 
-.mini-countdown .time-box small {
-  font-size: 11px;
-}
-
-/* Keyframes */
-@keyframes fadeUp{
-
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-.fade-up{
-    opacity:0;
-    transform:translateY(50px);
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-.fade-up.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-#wishForm{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-    margin-bottom:30px;
+  margin-top: 35px;
 }
 
 #wishForm input,
 #wishForm select,
-#wishForm textarea{
+#wishForm textarea {
+  width: 100%;
 
-    width:100%;
-    padding:15px;
+  border: 2px solid rgba(0, 0, 0, 0.08);
 
-    border:1px solid #ddd;
-    border-radius:15px;
+  border-radius: 16px;
 
-    font-size:15px;
-    font-family:Poppins,sans-serif;
+  padding: 15px;
 
+  background: #fff;
+
+  font-size: 15px;
+
+  transition: 0.25s;
 }
 
-#wishForm textarea{
+#wishForm textarea {
+  min-height: 140px;
 
-    min-height:120px;
-    resize:none;
-
+  resize: vertical;
 }
 
-.wish-card{
-
-    background:white;
-
-    border-radius:18px;
-
-    padding:18px;
-
-    margin-bottom:15px;
-
-    text-align:left;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.05);
-
+#wishForm input:focus,
+#wishForm select:focus,
+#wishForm textarea:focus {
+  border-color: var(--gold);
 }
 
-.wish-card h4{
-
-    color:#9c6b16;
-    margin-bottom:8px;
-    font-size:18px;
-
-    font-family:"Cinzel", serif;
-
+#submitWish {
+  width: 100%;
 }
 
-.wish-card small{
+/* ==========================================================
+   16. LOADING
+========================================================== */
 
-    display:block;
-    margin-bottom:10px;
-    color:#777;
+#loading {
+  margin-top: 18px;
 
+  color: var(--gold-dark);
+
+  font-weight: 500;
 }
 
-#loading{
+/* ==========================================================
+   17. STATISTIK
+========================================================== */
 
-    display:none;
+.wish-stats {
+  display: grid;
 
-    color:var(--brown);
+  grid-template-columns: repeat(2, 1fr);
 
-    font-size:14px;
+  gap: 15px;
 
-    margin-top:15px;
-
+  margin: 35px 0;
 }
 
-#submitWish:disabled{
+.stat-card {
+  background: #fff;
 
-    opacity:.7;
+  padding: 22px 15px;
 
-    cursor:not-allowed;
+  border-radius: 18px;
 
+  box-shadow: var(--shadow);
 }
 
-.status{
+.stat-card span {
+  display: block;
 
-    display:inline-block;
+  font-size: 30px;
 
-    background:#f7f0df;
+  font-weight: 700;
 
-    color:var(--brown);
-
-    padding:5px 12px;
-
-    border-radius:30px;
-
-    font-size:12px;
-
-    margin-bottom:10px;
-
+  color: var(--gold);
 }
 
-#wishList{
+.stat-card small {
+  display: block;
 
-    max-height:550px;
+  margin-top: 10px;
 
-    overflow-y:auto;
-
-    padding-right:5px;
-
+  color: var(--text);
 }
 
-#wishList::-webkit-scrollbar{
+/* ==========================================================
+   18. WISH TITLE
+========================================================== */
 
-    width:6px;
+.wish-title {
+  font-family: "Cinzel", serif;
 
+  color: var(--gold);
+
+  margin-bottom: 25px;
+
+  font-size: 28px;
 }
 
-#wishList::-webkit-scrollbar-thumb{
+/* ==========================================================
+   19. WISH CARD
+========================================================== */
 
-    background:var(--gold);
+#wishList {
+  display: flex;
 
-    border-radius:10px;
+  flex-direction: column;
 
+  gap: 18px;
 }
 
-.wish-title{
+.wish-card {
+  background: #fff;
 
-    margin:35px 0 20px;
+  border-radius: 20px;
 
-    text-align:left;
+  padding: 20px;
 
-    color:var(--gold);
+  box-shadow: var(--shadow);
 
-    font-family:"Cinzel", serif;
-
-    font-size:24px;
-
+  text-align: left;
 }
 
-/* ===============================
-   STATISTIK KEHADIRAN
-=============================== */
+.wish-header {
+  display: flex;
 
-.wish-stats{
+  justify-content: space-between;
 
-    display:grid;
+  align-items: center;
 
-    grid-template-columns:repeat(2,1fr);
+  gap: 15px;
 
-    gap:15px;
-
-    margin:25px 0 35px;
-
+  margin-bottom: 15px;
 }
 
-.stat-card{
+.wish-name {
+  font-weight: 600;
 
-    background:white;
-
-    border-radius:18px;
-
-    padding:18px;
-
-    text-align:center;
-
-    box-shadow:0 5px 18px rgba(0,0,0,.05);
-
+  color: var(--brown);
 }
 
-.stat-card span{
+.wish-name i {
+  color: var(--gold);
 
-    display:block;
-
-    font-size:28px;
-
-    font-weight:700;
-
-    color:#c89b3c;
-
-    margin-bottom:6px;
-
+  margin-right: 8px;
 }
 
-.stat-card small{
+.wish-status {
+  font-size: 13px;
 
-    font-size:13px;
+  padding: 6px 12px;
 
-    color:#666;
+  border-radius: 20px;
 
+  color: #fff;
 }
 
-.stat-card.hadir{
-
-    border-top:4px solid #2ecc71;
-
+.hadir {
+  background: #2e7d32;
 }
 
-.stat-card.ragu{
-
-    border-top:4px solid #f1c40f;
-
+.ragu {
+  background: #f9a825;
 }
 
-.stat-card.tidak-hadir{
-
-    border-top:4px solid #e74c3c;
-
+.tidak-hadir {
+  background: #c62828;
 }
 
-.show-more-btn{
+.wish-message {
+  line-height: 1.8;
 
-    width:100%;
+  color: var(--text);
 
-    margin-top:20px;
+  margin-bottom: 15px;
 
-    padding:14px;
-
-    border:none;
-
-    border-radius:15px;
-
-    background:linear-gradient(
-        to right,
-        var(--dark-gold),
-        var(--gold)
-    );
-
-    color:#fff;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+  word-break: break-word;
 }
 
-.show-more-btn:hover{
+.wish-date {
+  font-size: 13px;
 
-    transform:translateY(-2px);
-
+  color: #888;
 }
 
-/* ===========================
-   TOMBOL MUSIK
-=========================== */
-
-#musicBtn{
-    position: fixed;
-
-    left:50%;
-    transform:translateX(140px);
-
-    bottom:90px;
-
-    width:55px;
-    height:55px;
-
-    border:none;
-    border-radius:50%;
-
-    background:#c89b3c;
-    color:#fff;
-
-    display:none;
-    justify-content:center;
-    align-items:center;
-
-    font-size:22px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.25);
-
-    z-index:9999;
+.wish-date i {
+  margin-right: 6px;
 }
 
-#musicBtn:hover{
+/* ==========================================================
+   20. SHOW MORE
+========================================================== */
 
-    transform:scale(1.08);
+.show-more-btn {
+  width: 100%;
 
+  margin-top: 15px;
 }
 
-#musicBtn.playing i{
+/* ==========================================================
+   21. CLOSING
+========================================================== */
 
-    animation:rotateMusic 4s linear infinite;
-
+.closing {
+  padding-bottom: 140px;
 }
 
-@media (max-width:430px){
+.closing-text {
+  line-height: 1.9;
 
-    #musicBtn{
+  max-width: 320px;
 
-        left:auto;
-
-        right:18px;
-
-        transform:none;
-
-    }
-
+  margin: auto;
 }
 
-@keyframes rotateMusic{
+.closing-prayer {
+  margin: 35px 0;
 
-    from{
+  font-size: 18px;
 
-        transform:rotate(0deg);
+  color: var(--brown);
 
-    }
-
-    to{
-
-        transform:rotate(360deg);
-
-    }
-
+  white-space: pre-line;
 }
 
-/* ===========================
-   PRELOADER
-=========================== */
+.closing-name {
+  font-family: "Cinzel", serif;
 
-#preloader{
+  color: var(--gold);
 
-    position:fixed;
-
-    inset:0;
-
-    background:#f7f0df;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    z-index:99999;
-
-    transition:opacity .8s;
-
+  font-size: 34px;
 }
 
-.loader-content{
+/* ==========================================================
+   22. BOTTOM NAVIGATION
+========================================================== */
 
-    text-align:center;
+.bottom-nav {
+  position: fixed;
 
+  left: 50%;
+
+  bottom: 0;
+
+  transform: translateX(-50%);
+
+  width: min(430px, 100vw);
+
+  height: 74px;
+
+  background: #fff;
+
+  display: flex;
+
+  justify-content: space-around;
+
+  align-items: center;
+
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.08);
+
+  z-index: 999;
 }
 
-.loader-icon{
+.bottom-nav a {
+  display: flex;
 
-    font-size:70px;
+  flex-direction: column;
 
-    color:#c89b3c;
+  align-items: center;
 
-    margin-bottom:20px;
+  gap: 4px;
 
+  color: #999;
+
+  font-size: 12px;
+
+  transition: 0.3s;
 }
 
-.loader-content h2{
-
-    font-family:"Cinzel",serif;
-
-    color:#9c6b16;
-
-    margin-bottom:10px;
-
+.bottom-nav i {
+  font-size: 20px;
 }
 
-.loader-content p{
-
-    color:#777;
-
-    margin-bottom:30px;
-
+.bottom-nav a.active {
+  color: var(--gold);
 }
 
-.loader-spinner{
+/* ==========================================================
+   23. MUSIC BUTTON
+========================================================== */
 
-    width:45px;
+#musicBtn {
+  position: fixed;
 
-    height:45px;
+  right: 20px;
 
-    margin:auto;
+  bottom: 95px;
 
-    border:4px solid #ddd;
+  width: 56px;
 
-    border-top-color:#c89b3c;
+  height: 56px;
 
-    border-radius:50%;
+  padding: 0;
 
-    animation:loaderSpin .8s linear infinite;
+  border-radius: 50%;
 
+  display: none;
+
+  justify-content: center;
+
+  align-items: center;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+
+  z-index: 998;
 }
 
-@keyframes loaderSpin{
-
-    to{
-
-        transform:rotate(360deg);
-
-    }
-
+#musicBtn i {
+  font-size: 22px;
 }
 
-.hero-rumah{
-    display:flex;
-    justify-content:center;
-    margin:18px 0 20px;
+#musicBtn.playing {
+  animation: musicRotate 5s linear infinite;
 }
 
-.hero-rumah img{
-    width:170px;
-    height:auto;
-    display:block;
+@keyframes musicRotate {
+  from {
+    transform: rotate(0deg);
+  }
 
-    filter:
-        drop-shadow(0 2px 8px rgba(188,141,42,.18));
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-/* ===========================
-   RESPONSIVE
-=========================== */
+/* ==========================================================
+   24. PRELOADER
+========================================================== */
 
-@media (max-width:430px){
+#preloader {
+  position: fixed;
 
-    .container{
+  inset: 0;
 
-        width:100%;
-        max-width:100%;
+  background: var(--cream);
 
-    }
+  display: flex;
 
-    .cover-box{
+  justify-content: center;
 
-        max-width:100%;
+  align-items: center;
 
-    }
+  z-index: 99999;
 
-@media (max-width:430px){
-
-    .cover-content{
-
-        padding:60px 20px 55px;
-
-    }
-
-    .cover-content h4{
-
-        top:70px;
-
-        font-size:18px;
-
-    }
-
-    .cover-content h1{
-
-        font-size:38px;
-
-    }
-
-    .cover-date{
-
-        font-size:16px;
-
-    }
-
+  transition: 0.8s;
 }
 
+.loader-content {
+  text-align: center;
 }
 
-@media (min-width:431px){
+.loader-content h2 {
+  margin-top: 20px;
 
-    body{
+  font-family: "Cinzel", serif;
 
-        display:flex;
+  color: var(--gold);
+}
 
-        justify-content:center;
+.loader-content p {
+  margin-top: 10px;
 
-        background:#7a4b2a;
+  color: var(--brown);
+}
 
-    }
+.loader-spinner {
+  width: 45px;
 
-    .container{
+  height: 45px;
 
-        width:430px;
+  margin: 25px auto 0;
 
-    }
+  border-radius: 50%;
 
+  border: 4px solid rgba(0, 0, 0, 0.08);
+
+  border-top-color: var(--gold);
+
+  animation: loaderSpin 1s linear infinite;
+}
+
+@keyframes loaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================
+   25. ANIMATION
+========================================================== */
+
+.fade-up {
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  transition: 0.7s;
+}
+
+.fade-up.show {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.fade-out {
+  opacity: 0;
+
+  visibility: hidden;
+}
+
+/* ==========================================================
+   26. RESPONSIVE
+========================================================== */
+
+@media (max-width: 430px) {
+  .container {
+    width: 100%;
+  }
+
+  .cover-box {
+    max-width: 100%;
+  }
+
+  .cover-content {
+    padding: 55px 20px 60px;
+  }
+
+  .cover-content h4 {
+    top: 65px;
+
+    font-size: 17px;
+  }
+
+  .cover-content h1 {
+    font-size: 38px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .photo-frame img {
+    height: 420px;
+  }
+
+  .profile-card img {
+    height: 380px;
+  }
+}
+
+@media (min-width: 431px) {
+  body {
+    display: flex;
+
+    justify-content: center;
+  }
+
+  #musicBtn {
+    right: calc(50% - 215px + 20px);
+  }
+}
+
+/* ==========================================================
+   27. SAFE AREA (iPhone)
+========================================================== */
+
+@supports (padding: max(0px)) {
+  .bottom-nav {
+    padding-bottom: env(safe-area-inset-bottom);
+
+    height: calc(74px + env(safe-area-inset-bottom));
+  }
+}
+
+/* ==========================================================
+   28. SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee;
 }
