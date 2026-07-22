@@ -608,6 +608,64 @@ button:hover {
   word-break: break-all;
 }
 
+.rekening-card{
+
+    background:#fff;
+
+    border-radius:28px;
+
+    padding:24px;
+
+    margin:25px 0;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.bank-header{
+
+    margin-bottom:18px;
+
+}
+
+.bank-header img{
+
+    height:34px;
+
+    width:auto;
+
+}
+
+.rekening-body{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.rekening-body span{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+.rekening-name{
+
+    margin-top:15px;
+
+    color:#666;
+
+    font-size:18px;
+
+}
+
 .copy-icon {
   width: 46px;
 
