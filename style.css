@@ -620,28 +620,21 @@ button:hover {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-.bank-header {
-  display: flex;
-
-  align-items: center;
-
-  margin-bottom: 12px;
+.bank-header{
+    display:flex;
+    align-items:center;
+    height:34px;
+    margin-bottom:18px;
 }
 
-.logo-bri {
-  width: 85px;
-
-  height: auto;
-
-  display: block;
+.logo-bri{
+    width:82px;
+    height:auto;
 }
 
-.logo-bca {
-  width: 35px;
-
-  height: auto;
-
-  display: block;
+.logo-bca{
+    width:86px;
+    height:auto;
 }
 
 .rekening-body {
@@ -656,20 +649,24 @@ button:hover {
   gap: 25px;
 }
 
-.rekening-body span {
-  font-size: 26px;
+.rekening-body span{
 
-  font-weight: 700;
+    font-size:18px;
 
-  letter-spacing: 1px;
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    line-height:1.2;
+
 }
 
 .rekening-name {
-  margin-top: 10px;
+  margin-top: 14px;
 
   color: var(--brown);
 
-  font-size: 18px;
+  font-size: 16px;
 
   font-weight: 500;
 }
