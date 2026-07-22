@@ -582,7 +582,45 @@ button:hover {
    14. GIFT
 ========================================================== */
 
-.rekening {
+.rekening-card {
+  background: #fff;
+
+  border-radius: 24px;
+
+  padding: 24px;
+
+  margin: 25px 0;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.bank-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.bank-icon {
+  font-size: 24px;
+
+  color: #c89b3c;
+}
+
+.bank-name {
+  font-size: 20px;
+
+  font-weight: 700;
+
+  color: #7a4b2a;
+
+  letter-spacing: 1px;
+}
+
+.rekening-body {
   display: flex;
 
   justify-content: space-between;
@@ -590,95 +628,38 @@ button:hover {
   align-items: center;
 
   gap: 15px;
-
-  background: #fff;
-
-  padding: 18px 22px;
-
-  margin: 18px 0 10px;
-
-  border-radius: 18px;
-
-  box-shadow: var(--shadow);
-
-  font-weight: 600;
-
-  color: var(--brown);
-
-  word-break: break-all;
 }
 
-.rekening-card {
-  background: #fff;
+.rekening-number {
+  font-size: 28px;
 
-  border-radius: 24px;
+  font-weight: 700;
 
-  padding: 22px 24px;
+  letter-spacing: 2px;
 
-  margin: 25px 0;
-
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-.bank-header{
-    display:flex;
-    align-items:center;
-    height:34px;
-    margin-bottom:18px;
-}
-
-.logo-bri{
-    width:82px;
-    height:auto;
-}
-
-.logo-bca{
-    width:86px;
-    height:auto;
-}
-
-.rekening-body {
-  display: flex;
-
-  padding-right: 8px;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  gap: 25px;
-}
-
-.rekening-body span{
-
-    font-size:18px;
-
-    font-weight:700;
-
-    letter-spacing:1px;
-
-    line-height:1.2;
-
+  color: #444;
 }
 
 .rekening-name {
-  margin-top: 14px;
+  margin-top: 18px;
 
-  color: var(--brown);
+  text-align: center;
 
-  font-size: 16px;
+  font-size: 18px;
+
+  color: #7a4b2a;
 
   font-weight: 500;
 }
 
 .copy-icon {
-  width: 52px;
+  width: 56px;
 
-  height: 52px;
-
-  padding: 0;
+  height: 56px;
 
   border-radius: 50%;
+
+  flex-shrink: 0;
 
   display: flex;
 
@@ -686,11 +667,13 @@ button:hover {
 
   align-items: center;
 
-  flex-shrink: 0;
+  background: linear-gradient(135deg, #b9851c, #d6aa45);
 }
 
 .copy-icon i {
-  font-size: 18px;
+  color: #fff;
+
+  font-size: 20px;
 }
 
 /* ==========================================================
