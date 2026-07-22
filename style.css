@@ -624,15 +624,31 @@ button:hover {
 
 .bank-header{
 
+    display:flex;
+
+    align-items:center;
+
     margin-bottom:12px;
 
 }
 
-.bank-header img{
+.logo-bri{
 
-    height:45px;
+    width:85px;
 
-    width:auto;
+    height:auto;
+
+    display:block;
+
+}
+
+.logo-bca{
+
+    width:65px;
+
+    height:auto;
+
+    display:block;
 
 }
 
