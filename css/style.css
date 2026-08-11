@@ -1,0 +1,1800 @@
+/* =====================================================
+   STYLE.CSS — SOFT BLUE LUXURY
+===================================================== */
+
+:root{
+    --gold:#c9a86a;
+    --gold-soft:#e6d6ad;
+    --blue-50:#f7fbff;
+    --blue-100:#edf7fd;
+    --blue-200:#d9ecf8;
+    --blue-300:#b9d9ec;
+    --blue-400:#8ebfe2;
+    --blue-500:#6ea8d0;
+    --blue-600:#4f8eb9;
+    --navy:#28455e;
+    --text:#536b7d;
+    --muted:#8da0af;
+    --white:#fff;
+    --line:rgba(79,142,185,.20);
+    --shadow:0 18px 55px rgba(43,83,110,.12);
+    --shadow-soft:0 10px 30px rgba(43,83,110,.08);
+    --radius:26px;
+    --max-width:430px;
+    --ease:cubic-bezier(.22,1,.36,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body{
+    font-family:'Poppins',sans-serif;
+
+    color:var(--text);
+
+    background:
+        linear-gradient(
+            135deg,
+            #e7f4fc,
+            #d6ebf7
+        );
+
+    overflow-x:hidden;
+
+    -webkit-font-smoothing:antialiased;
+}
+
+body.is-locked{
+    overflow:hidden;
+}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+img{display:block;max-width:100%}
+a{color:inherit}
+main{
+    width:100%;
+    max-width:var(--max-width);
+    margin:0 auto;
+    background:var(--white);
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 0 70px rgba(34,70,94,.14);
+}
+.section{
+    position:relative;
+    padding:88px 0;
+    overflow:hidden;
+}
+.section-inner{
+    width:min(88%,370px);
+    margin:0 auto;
+    position:relative;
+    z-index:2;
+}
+.eyebrow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    text-align:center;
+    text-transform:uppercase;
+    letter-spacing:.28em;
+    font-size:10px;
+    color:var(--blue-600);
+}
+.eyebrow::before,
+.eyebrow::after{
+    content:"";
+    width:26px;
+    height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold));
+}
+.eyebrow::after{
+    background:linear-gradient(90deg,var(--gold),transparent);
+}
+.section-title{
+    text-align:center;
+    font:600 39px/1.05 'Cormorant Garamond',serif;
+    color:var(--navy);
+    margin:12px 0 16px;
+}
+.section-lead{
+    text-align:center;
+    font:300 13px/1.9 'Poppins',sans-serif;
+    color:var(--text);
+    max-width:340px;
+    margin:0 auto;
+}
+.script-title{
+    font:400 58px/1.05 'Great Vibes',cursive;
+    color:var(--navy);
+    text-align:center;
+}
+.script-title span{color:var(--gold);font-size:.7em}
+.ornament{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    margin:24px 0;
+}
+.ornament i{
+    width:44px;
+    height:1px;
+    background:var(--blue-300);
+}
+.ornament span{color:var(--blue-500);font-size:13px}
+
+.primary-button{
+    border:1px solid rgba(255,255,255,.55);
+    background:rgba(255,255,255,.94);
+    color:var(--blue-600);
+    min-height:48px;
+    padding:0 24px;
+    border-radius:999px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    box-shadow:0 12px 30px rgba(20,50,70,.15);
+    transition:transform .35s var(--ease),box-shadow .35s ease,background .35s ease;
+}
+.primary-button svg{width:16px}
+.primary-button:hover{transform:translateY(-3px);box-shadow:0 18px 35px rgba(20,50,70,.22)}
+.primary-button:active{transform:scale(.98)}
+
+#preloader{
+    position:fixed;
+    inset:0;
+
+    z-index:10000;
+
+    display:grid;
+    place-items:center;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #ffffff 0%,
+            #f4fbff 45%,
+            #e7f4fc 100%
+        );
+
+    transition:
+        opacity .9s ease,
+        visibility .9s ease;
+}
+
+#preloader.is-hidden{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.preloader-inner{
+    width:min(82%,340px);
+    text-align:center;
+}
+
+.preloader-monogram{
+    font:
+        400 64px/1
+        'Great Vibes',
+        cursive;
+
+    color:#28455e;
+
+    animation:
+        preloaderFloat 3s ease-in-out infinite;
+}
+
+.preloader-monogram span{
+    color:#6ea8d0;
+    font-size:.7em;
+}
+
+.preloader-line{
+    width:42px;
+    height:1px;
+
+    margin:24px auto 20px;
+
+    background:#8ebfe2;
+}
+
+.preloader-title{
+    font-size:9px;
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    color:#6ea8d0;
+}
+
+.preloader-names{
+    margin:10px 0 4px;
+
+    font:
+        400 46px/1
+        'Great Vibes',
+        cursive;
+
+    color:#28455e;
+}
+
+.preloader-names span{
+    color:#6ea8d0;
+}
+
+.preloader-date{
+    margin-top:10px;
+
+    font:
+        400 13px
+        'Cormorant Garamond',
+        serif;
+
+    letter-spacing:.22em;
+
+    color:#8da0af;
+}
+
+.preloader-loader{
+    margin-top:42px;
+}
+
+.preloader-track{
+    width:100%;
+    height:1px;
+
+    background:#d9ecf8;
+
+    overflow:hidden;
+}
+
+.preloader-track span{
+    display:block;
+
+    width:0;
+    height:100%;
+
+    background:#6ea8d0;
+
+    transition:width .3s ease;
+}
+
+.preloader-bottom{
+    display:flex;
+    justify-content:space-between;
+
+    margin-top:10px;
+
+    font-size:8px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+
+    color:#9aaebb;
+}
+
+.preloader-bottom strong{
+    font-weight:500;
+    color:#6ea8d0;
+}
+
+@keyframes preloaderFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-5px);
+    }
+}
+
+/* ==========================================
+   COVER — MOBILE WIDTH
+========================================== */
+
+/* Cover benar-benar hilang setelah dibuka */
+
+#cover.is-opened{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+
+/* Saat sedang membuka */
+
+#cover.is-opening{
+    pointer-events:none;
+}
+
+
+.cover-photo,.cover-overlay{
+    position:absolute;inset:0;
+}
+/* ==========================================
+   COVER — CONSOLIDATED / MOBILE FIRST
+   - Maksimal 430px di desktop
+   - Foto tetap bersih
+   - Teks terpusat dan kontras
+========================================== */
+
+#cover{
+    position:fixed;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:100%;
+    max-width:var(--max-width);
+    height:100dvh;
+
+    z-index:9999;
+    overflow:hidden;
+
+    background:#eef8ff;
+
+    box-shadow:0 0 70px rgba(34,70,94,.18);
+}
+
+#cover.is-opening{
+    pointer-events:none;
+}
+
+#cover.is-opened{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+/* Foto cover */
+.cover-photo{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    overflow:hidden;
+    background:#d9ecf8;
+}
+
+.cover-photo img{
+    width:100%;
+    height:100%;
+    display:block;
+
+    object-fit:cover;
+    object-position:center center;
+
+    filter:none;
+    opacity:1;
+
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+/* Tidak memakai overlay putih/biru */
+.cover-overlay{
+    position:absolute;
+    inset:0;
+    z-index:1;
+    background:transparent;
+    pointer-events:none;
+}
+
+/* Area teks */
+.cover-content{
+    position:absolute;
+    left:50%;
+    top:57%;
+
+    width:min(90%,390px);
+
+    transform:translate(-50%,-50%);
+
+    z-index:3;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+
+    padding:0;
+
+    pointer-events:none;
+
+    transition:
+        opacity .55s ease,
+        transform .8s var(--ease);
+}
+
+.cover-kicker{
+    margin:0 0 9px;
+
+    color:#28455e;
+
+    font-family:'Poppins',sans-serif;
+    font-size:9px;
+    font-weight:500;
+    line-height:1;
+
+    letter-spacing:.34em;
+    text-transform:uppercase;
+
+    text-shadow:
+        0 1px 7px rgba(255,255,255,.95),
+        0 0 16px rgba(255,255,255,.75);
+}
+
+.cover-names{
+    margin:0;
+
+    color:#28455e;
+
+    font:
+        400 clamp(54px,14vw,66px)/.95
+        'Great Vibes',cursive;
+
+    letter-spacing:-1px;
+
+    white-space:nowrap;
+
+    text-shadow:
+        0 2px 10px rgba(255,255,255,.95),
+        0 0 18px rgba(255,255,255,.65);
+}
+
+.cover-names span{
+    color:#6ea8d0;
+    margin:0 3px;
+}
+
+.cover-date{
+    margin-top:13px;
+
+    color:#315f82;
+
+    font:
+        500 15px/1.2
+        'Cormorant Garamond',serif;
+
+    letter-spacing:.16em;
+
+    text-shadow:
+        0 1px 7px rgba(255,255,255,.95);
+}
+
+/* Nama tamu */
+.guest-box{
+    min-width:min(290px,88%);
+    margin:20px 0 18px;
+
+    padding:11px 20px 13px;
+
+    border:1px solid rgba(255,255,255,.55);
+    border-radius:15px;
+
+    background:rgba(255,255,255,.82);
+
+    box-shadow:
+        0 8px 25px rgba(36,73,106,.12);
+
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+
+    pointer-events:none;
+}
+
+.guest-box small{
+    display:block;
+
+    margin:0 0 4px;
+
+    color:#6c8499;
+
+    font:
+        500 8px/1.2
+        'Poppins',sans-serif;
+
+    letter-spacing:.15em;
+    text-transform:uppercase;
+}
+
+.guest-box strong{
+    display:block;
+
+    margin:0;
+
+    color:#28455e;
+
+    font:
+        600 20px/1.1
+        'Cormorant Garamond',serif;
+}
+
+/* Tombol buka undangan */
+#openInvitation{
+    pointer-events:auto;
+
+    position:relative;
+    z-index:5;
+
+    border:0;
+    border-radius:999px;
+
+    min-height:45px;
+    padding:0 25px;
+
+    background:rgba(255,255,255,.96);
+    color:#477da5;
+
+    font:
+        600 9px/1
+        'Poppins',sans-serif;
+
+    letter-spacing:.15em;
+    text-transform:uppercase;
+
+    box-shadow:
+        0 10px 30px rgba(36,73,106,.20);
+
+    cursor:pointer;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+#openInvitation:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 14px 35px rgba(36,73,106,.25);
+}
+
+#openInvitation:active{
+    transform:scale(.97);
+}
+
+/* Saat pintu dibuka */
+#cover.is-opening .cover-content{
+    opacity:0;
+    transform:
+        translate(-50%,-50%)
+        scale(.96);
+}
+
+/* ==========================================
+   RESPONSIVE COVER
+========================================== */
+
+@media (min-width:431px){
+    #cover{
+        height:100dvh;
+    }
+}
+
+@media (max-width:430px){
+    #cover{
+        width:100%;
+        max-width:430px;
+    }
+
+    .cover-content{
+        top:57%;
+        width:90%;
+    }
+
+    .cover-kicker{
+        font-size:8px;
+        letter-spacing:.30em;
+    }
+
+    .cover-names{
+        font-size:57px;
+    }
+
+    .cover-date{
+        margin-top:12px;
+        font-size:15px;
+    }
+
+    .guest-box{
+        margin-top:18px;
+        margin-bottom:15px;
+    }
+
+    #openInvitation{
+        min-height:44px;
+        padding:0 24px;
+        font-size:9px;
+    }
+}
+
+/* ==========================================
+   DOOR — TRANSPARENT
+========================================== */
+
+.door{
+    position:absolute;
+
+    top:-1%;
+    width:50.5%;
+    height:102%;
+
+    z-index:4;
+
+    /*
+       TRANSPARAN
+       supaya foto tetap terlihat bersih
+    */
+    background:rgba(255,255,255,.035);
+
+    border:1px solid rgba(255,255,255,.28);
+
+    /*
+       HAPUS BLUR
+    */
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+
+    transform-style:preserve-3d;
+
+    backface-visibility:hidden;
+
+    transition:
+        transform 1.55s var(--ease),
+        box-shadow 1.2s ease;
+}
+
+.door::before,.door::after{
+    content:"";
+    position:absolute;
+    top:10%;
+    bottom:10%;
+    width:1px;
+    background:linear-gradient(transparent,rgba(255,255,255,.55),transparent);
+}
+.door-left{left:-.5%;transform-origin:left center}
+.door-right{right:-.5%;transform-origin:right center}
+.door-left::before{right:17%}.door-left::after{left:17%}
+.door-right::before{left:17%}.door-right::after{right:17%}
+.door-inner{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    color:rgba(255,255,255,.78);
+    font-size:9px;
+    letter-spacing:.25em;
+    text-align:center;
+}
+.door-inner strong{font:400 45px 'Great Vibes',cursive;color:#fff}
+#cover.is-opening .door-left{
+    transform:rotateY(-118deg);
+    box-shadow:inset -80px 0 100px rgba(12,40,58,.28),20px 0 60px rgba(12,40,58,.16);
+}
+#cover.is-opening .door-right{
+    transform:rotateY(118deg);
+    box-shadow:inset 80px 0 100px rgba(12,40,58,.28),-20px 0 60px rgba(12,40,58,.16);
+}
+#cover.is-opening .cover-content{
+    opacity:0;
+    transform:scale(.96);
+    transition:opacity .55s ease,transform .8s var(--ease);
+}
+
+.hero-section{
+    min-height:760px;
+    display:grid;
+    place-items:center;
+    text-align:center;
+    background:
+        radial-gradient(circle at 15% 10%,rgba(185,217,236,.55),transparent 28%),
+        linear-gradient(180deg,#edf8ff 0%,#fff 72%);
+}
+.hero-section::after{
+    content:"";
+    position:absolute;
+    width:240px;height:240px;
+    right:-120px;top:90px;
+    border:1px solid var(--blue-200);
+    border-radius:50%;
+}
+.hero-date{margin-top:14px;font:400 15px 'Cormorant Garamond',serif;letter-spacing:.12em;color:var(--blue-600)}
+.hero-quote{max-width:330px;margin:0 auto;font:italic 16px/1.8 'Cormorant Garamond',serif;color:var(--text)}
+.quote-arabic{
+    display:block;
+    margin-bottom:16px;
+    direction:rtl;
+    font-family:'Cormorant Garamond',serif;
+    font-style:normal;
+    font-size:22px;
+    line-height:2;
+    color:var(--navy);
+}
+.quote-divider{
+    display:block;
+    margin:2px auto 14px;
+    color:var(--gold);
+    font-size:14px;
+    font-style:normal;
+}
+.quote-translation{font-style:italic}
+.quote-source{
+    display:block;
+    margin-top:12px;
+    font-style:normal;
+    font-size:9px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--blue-600);
+}
+
+.parents{
+    font-size:12px;
+    line-height:1.85;
+    color:var(--muted);
+}
+.parents strong{color:var(--navy);font-weight:600}
+.parents span{margin:0 5px;color:var(--blue-400)}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:28px}
+.count-box{
+    padding:15px 5px;
+    background:rgba(255,255,255,.9);
+    border:1px solid var(--blue-200);
+    border-radius:16px;
+    box-shadow:var(--shadow-soft);
+}
+.count-box strong{display:block;font:600 27px 'Cormorant Garamond',serif;color:var(--blue-600)}
+.count-box span{display:block;margin-top:2px;font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+.couple-section{background:#fff}
+.couple-grid{margin-top:40px;display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
+.person-card{text-align:center}
+.portrait-wrap{
+    width:178px;height:178px;margin:0 auto 18px;
+    padding:5px;border:1px solid var(--gold);border-radius:50%;
+    box-shadow:var(--shadow-soft);
+}
+.portrait-wrap img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.person-role{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-600)}
+.person-card h3{margin:7px 0 5px;font:600 31px 'Cormorant Garamond',serif;color:var(--navy)}
+.person-card p:last-child{font-size:12px;line-height:1.8;color:var(--muted)}
+.couple-amp{text-align:center;font:400 45px 'Great Vibes',cursive;color:var(--gold);margin:-8px 0}
+
+.event-section{background:var(--blue-100)}
+.event-grid{margin-top:34px;display:grid;gap:16px}
+.event-card{
+    position:relative;padding:29px 24px;text-align:center;background:#fff;
+    border:1px solid var(--blue-200);border-radius:24px;box-shadow:var(--shadow-soft);
+}
+.event-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;
+    height:3px;
+    border-radius:24px 24px 0 0;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.event-label{text-transform:uppercase;letter-spacing:.18em;font-size:9px;color:var(--blue-600)}
+.event-card h3{margin:8px 0 4px;font:600 25px 'Cormorant Garamond',serif;color:var(--navy)}
+.event-time{font:500 15px 'Poppins',sans-serif;color:var(--blue-600)}
+.event-place{font-size:12px;line-height:1.7;color:var(--muted);margin:12px 0 17px}
+.map-button, .calender-button{
+    display:inline-flex;padding:9px 17px;border-radius:999px;
+    text-decoration:none;font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+    color:#fff;background:var(--blue-500);transition:.3s ease;
+}
+.map-button:hover{background:var(--blue-600);transform:translateY(-2px)}
+
+.event-map{
+    margin:14px 0 16px;
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid var(--blue-200);
+    box-shadow:var(--shadow);
+}
+.event-map iframe{
+    width:100%;
+    height:180px;
+    display:block;
+    border:0;
+}
+.event-map-link{
+    display:block;
+    padding:10px;
+    text-align:center;
+    background:var(--blue-50);
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--blue-600);
+}
+
+.gallery-section{background:#fff}
+.gallery-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:9px;margin-top:34px}
+.gallery-item{
+    padding:0;border:0;background:none;overflow:hidden;border-radius:17px;min-height:150px;
+    box-shadow:var(--shadow-soft);
+}
+.gallery-item:nth-child(1){grid-row:span 2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.gallery-item:hover img{transform:scale(1.05)}
+
+.gift-section{background:linear-gradient(180deg,#edf8ff,#f9fcff)}
+
+.gift-list{
+    display:grid;
+    gap:18px;
+    margin-top:32px;
+}
+
+.gift-card{
+    position:relative;
+    margin:0 auto;
+    max-width:330px;
+    width:100%;
+    height:280px;              /* height tetap, bukan min-height */
+    padding:34px 20px 26px;
+    text-align:center;
+    background:linear-gradient(180deg,#ffffff,#f8fbff);
+    border:1px solid var(--blue-200);
+    border-radius:24px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.gift-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;
+    height:3px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+.gift-bank{
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--blue-600);
+}
+
+.gift-number{
+    margin:16px 0 4px;
+    font-family:'Poppins',sans-serif;
+    font-size:clamp(15px,4.5vw,23px);
+    font-weight:600;
+    letter-spacing:.05em;
+    color:var(--navy);
+    white-space:nowrap;
+}
+
+.gift-owner{
+    font-size:10.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--muted);
+}
+
+.gift-copy{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:22px;
+    padding:12px 24px;
+    border:1px solid var(--blue-400);
+    border-radius:999px;
+    background:transparent;
+    color:var(--blue-600);
+    font-family:'Poppins',sans-serif;
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:background .3s ease,color .3s ease,transform .25s ease,box-shadow .3s ease,border-color .3s ease;
+}
+
+.gift-copy svg{
+    width:13px;height:13px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.8;
+    flex:none;
+}
+
+.gift-copy:hover{
+    background:var(--blue-500);
+    color:#fff;
+    transform:translateY(-2px);
+    box-shadow:0 12px 28px rgba(79,142,185,.28);
+}
+
+.gift-copy:active{transform:translateY(0) scale(.98)}
+
+.gift-copy.is-copied{
+    background:var(--navy);
+    border-color:var(--navy);
+    color:#fff;
+}
+
+.rsvp-section{background:#fff}
+.rsvp-form{margin:30px auto 0;max-width:350px;display:grid;gap:15px}
+.rsvp-form label{display:grid;gap:7px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-600)}
+.rsvp-form input,.rsvp-form select,.rsvp-form textarea{
+    width:100%;border:1px solid var(--blue-200);background:#fbfdff;color:var(--navy);
+    border-radius:14px;padding:13px 14px;outline:none;font-size:13px;text-transform:none;letter-spacing:0;
+    transition:border-color .3s,box-shadow .3s;
+}
+.rsvp-form textarea{min-height:105px;resize:vertical}
+.rsvp-form input:focus,.rsvp-form select:focus,.rsvp-form textarea:focus{
+    border-color:var(--blue-400);box-shadow:0 0 0 4px rgba(142,191,226,.15)
+}
+.form-button{border:0;background:var(--blue-500);color:#fff;width:100%}
+.form-message{text-align:center;min-height:20px;font-size:11px;color:var(--blue-600)}
+.wish-list{display:grid;gap:10px;margin:26px auto 0;max-width:350px}
+.wish-item{padding:14px 16px;background:var(--blue-100);border:1px solid var(--blue-200);border-radius:16px}
+.wish-head{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.wish-name{font:600 17px 'Cormorant Garamond',serif;color:var(--navy)}
+.wish-status{font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-600)}
+.wish-text{font-size:11px;line-height:1.7;color:var(--text);margin-top:4px}
+
+.footer{padding:75px 0;background:#24445d;color:#fff;text-align:center}
+.footer-inner{width:min(88%,350px);margin:auto}
+.footer .eyebrow{color:#b9d9ec}
+.footer .script-title{color:#fff;margin:12px 0 18px}
+.footer p:not(.eyebrow){font:300 13px/1.8 'Cormorant Garamond',serif;color:#d8e8f3}
+.footer small{display:block;margin-top:28px;font-size:8px;letter-spacing:.14em;color:#9fb7c8;text-transform:uppercase}
+
+.side-nav{
+    position:fixed;
+
+    top:50%;
+
+    left:calc(50% + 185px);
+
+    right:auto;
+
+    transform:translateY(-50%);
+
+    z-index:8000;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+}
+
+@media (max-width:430px){
+
+    .side-nav{
+        left:auto;
+        right:10px;
+    }
+
+}
+
+.nav-item{
+    width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.9);border:1px solid rgba(142,191,226,.35);
+    box-shadow:0 8px 25px rgba(35,70,94,.12);text-decoration:none;color:var(--blue-600);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    transition:width .35s var(--ease),background .35s ease,color .35s ease,transform .35s ease;
+    overflow:hidden;
+}
+.nav-item svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.5;flex:none}
+.nav-item span{font-size:8px;text-transform:uppercase;letter-spacing:.08em;max-width:0;opacity:0;white-space:nowrap;transition:.3s}
+.nav-item:hover{width:105px;border-radius:999px;justify-content:flex-start;padding-left:13px;gap:9px}
+.nav-item:hover span{max-width:65px;opacity:1}
+.nav-item.active{background:var(--blue-500);color:#fff}
+
+.music-button{
+    position:fixed;
+
+    right:calc(50% - 195px);
+
+    bottom:22px;
+
+    z-index:8000;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.8);
+
+    background:rgba(255,255,255,.92);
+
+    color:var(--blue-600);
+
+    box-shadow:var(--shadow-soft);
+
+    display:grid;
+    place-items:center;
+}
+
+@media (max-width:430px){
+
+    .music-button{
+        right:16px;
+    }
+
+}
+
+.music-disc{
+    width:22px;height:22px;border-radius:50%;border:1px solid var(--blue-400);
+    display:grid;place-items:center;
+}
+.music-disc span{width:6px;height:6px;border-radius:50%;background:var(--blue-500)}
+.music-button.is-playing .music-disc{animation:discSpin 2.5s linear infinite}
+
+.lightbox{
+    position:fixed;inset:0;z-index:9998;background:rgba(12,29,42,.94);
+    display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;
+    transition:opacity .3s ease,visibility .3s ease;
+}
+.lightbox.is-open{opacity:1;visibility:visible}
+.lightbox figure{width:min(90vw,800px);height:min(80vh,700px);display:grid;place-items:center}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.lightbox-close,.lightbox-arrow{
+    position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;border-radius:50%;
+    width:44px;height:44px;font-size:25px;display:grid;place-items:center;
+}
+.lightbox-close{top:22px;right:22px}
+.lightbox-arrow{top:50%;transform:translateY(-50%);font-size:20px}
+.lightbox-arrow.prev{left:20px}.lightbox-arrow.next{right:20px}
+.lightbox-close:hover,.lightbox-arrow:hover{background:rgba(255,255,255,.22)}
+
+@keyframes loaderSpin{to{transform:rotate(360deg)}}
+@keyframes discSpin{to{transform:rotate(360deg)}}
+
+/* ==========================================
+   HIDDEN ATTRIBUTE
+========================================== */
+
+[hidden]{
+    display:none !important;
+}
+
+/* =========================================
+   RSVP STATISTICS
+========================================= */
+
+.rsvp-statistics {
+    width: 100%;
+    margin: 24px auto 28px;
+    text-align: center;
+}
+
+
+.rsvp-stat-title {
+    margin-bottom: 16px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    letter-spacing: .5px;
+
+    text-transform: uppercase;
+
+    color: #527b9d;
+}
+
+
+/* -----------------------------------------
+   GRID
+----------------------------------------- */
+
+.rsvp-stat-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+
+    width: 100%;
+}
+
+
+/* -----------------------------------------
+   CARD
+----------------------------------------- */
+
+.rsvp-stat-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 82px;
+
+    padding:
+        12px 5px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255, 255, 255, .72);
+
+    border:
+        1px solid
+        rgba(82, 123, 157, .14);
+
+    box-shadow:
+        0 6px 20px
+        rgba(70, 100, 130, .07);
+
+    backdrop-filter:
+        blur(8px);
+}
+
+
+/* -----------------------------------------
+   NUMBER
+----------------------------------------- */
+
+.rsvp-stat-number {
+
+    display: block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    color: #527b9d;
+}
+
+
+/* -----------------------------------------
+   LABEL
+----------------------------------------- */
+
+.rsvp-stat-label {
+
+    display: block;
+
+    margin-top: 7px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    letter-spacing: .6px;
+
+    text-transform: uppercase;
+
+    color: #71879a;
+}
+
+
+/* -----------------------------------------
+   MOBILE
+----------------------------------------- */
+
+@media (max-width: 430px) {
+
+    .rsvp-statistics {
+        margin-top: 20px;
+        margin-bottom: 24px;
+    }
+
+
+    .rsvp-stat-title {
+        font-size: 19px;
+        margin-bottom: 14px;
+    }
+
+
+    .rsvp-stat-grid {
+        gap: 6px;
+    }
+
+
+    .rsvp-stat-card {
+        min-height: 76px;
+        padding: 10px 3px;
+        border-radius: 14px;
+    }
+
+
+    .rsvp-stat-number {
+        font-size: 27px;
+    }
+
+
+    .rsvp-stat-label {
+        font-size: 7px;
+        letter-spacing: .35px;
+    }
+
+}
+
+/* =====================================================
+   COVER FINAL POSITION
+   ===================================================== */
+
+/* Pastikan konten cover berada tepat di tengah */
+#cover .cover-content {
+    position: absolute;
+
+    left: 50%;
+    top: 48%;
+
+    width: 90%;
+    max-width: 390px;
+
+    transform: translate(-50%, -50%) !important;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    pointer-events: none;
+
+    animation: coverEnterFinal 1s ease both;
+}
+
+
+/* 
+   PENTING:
+   Animation sebelumnya menghilangkan
+   translateX(-50%), sehingga cover bergeser.
+*/
+@keyframes coverEnterFinal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   POSISI TEKS COVER
+   ===================================================== */
+
+#cover .cover-kicker {
+
+    margin: 0 0 10px;
+
+    color: #294a67;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: .30em;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 1px 5px rgba(255,255,255,.95),
+        0 0 12px rgba(255,255,255,.85);
+
+    position: relative;
+    z-index: 11;
+}
+
+
+#cover .cover-names {
+
+    margin: 0;
+
+    color: #244765;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: clamp(52px, 14vw, 64px);
+
+    font-weight: 400;
+
+    line-height: .95;
+
+    letter-spacing: -1px;
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 2px 8px rgba(255,255,255,.95),
+        0 0 16px rgba(255,255,255,.80);
+
+    position: relative;
+    z-index: 11;
+}
+
+
+#cover .cover-names span {
+
+    color: #6ea8d0;
+
+    margin: 0 3px;
+}
+
+
+#cover .cover-date {
+
+    margin-top: 14px;
+
+    color: #315f82;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    letter-spacing: .15em;
+
+    text-shadow:
+        0 1px 5px rgba(255,255,255,.95);
+
+    position: relative;
+    z-index: 11;
+}
+
+
+/* =====================================================
+   TOMBOL
+   ===================================================== */
+
+#cover #openInvitation {
+
+    margin-top: 20px;
+
+    position: relative;
+
+    z-index: 20;
+
+    pointer-events: auto;
+}
+
+
+/* =====================================================
+   DOOR
+   ===================================================== */
+
+/*
+   Pintu tetap ada untuk animasi,
+   tetapi tulisan bawaan pintu disembunyikan.
+
+   Jadi tidak muncul lagi:
+   THE WEDDING
+   D & L
+   01 · 11 · 2026
+   ♥
+*/
+
+#cover .door-inner {
+
+    display: none;
+}
+
+
+/*
+   Pintu berada di bawah teks utama
+*/
+#cover .door {
+
+    z-index: 4;
+}
+
+
+/*
+   Konten utama berada di atas pintu
+*/
+#cover .cover-content {
+
+    z-index: 10;
+}
+
+
+/* =====================================================
+   FOTO COVER
+   ===================================================== */
+
+#cover .cover-photo {
+
+    z-index: 0;
+}
+
+
+#cover .cover-photo img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    /*
+       Posisi foto tetap natural.
+    */
+    object-position: center center;
+
+    opacity: 1;
+
+    filter: none;
+}
+
+
+/* Jangan beri warna/blur pada foto */
+#cover .cover-overlay {
+
+    z-index: 1;
+
+    background: transparent;
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+
+/* =====================================================
+   GUEST
+   ===================================================== */
+
+#cover .guest-box {
+
+    position: relative;
+
+    z-index: 12;
+
+    margin-top: 18px;
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   SAAT PINTU DIBUKA
+   ===================================================== */
+
+#cover.is-opening .cover-content {
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.96) !important;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 430px) {
+
+    #cover .cover-content {
+
+        top: 48%;
+
+        width: 90%;
+    }
+
+
+    #cover .cover-kicker {
+
+        font-size: 8px;
+
+        letter-spacing: .28em;
+
+        margin-bottom: 9px;
+    }
+
+
+    #cover .cover-names {
+
+        font-size: 56px;
+
+        letter-spacing: -1px;
+    }
+
+
+    #cover .cover-date {
+
+        margin-top: 13px;
+
+        font-size: 14px;
+    }
+
+
+    #cover #openInvitation {
+
+        margin-top: 18px;
+
+        min-height: 44px;
+
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+#cover .door-inner {
+    display: none;
+}
+
+
+
+/* =====================================================
+   MAINTENANCE NOTE
+   Cover styling is intentionally kept in ONE block above.
+   Jangan menambahkan aturan #cover / .cover-content baru
+   di bawah file ini karena akan menimpa posisi cover.
+===================================================== */
+
+/* =====================================================
+   SOFT BLUE 1 — FLORAL PRELOADER & COVER
+===================================================== */
+
+#preloader{
+    background:
+        radial-gradient(circle at 50% 30%, #ffffff 0%, #f7fbff 42%, #e7f4fc 100%);
+}
+
+.preloader-inner{
+    width:min(88%,390px);
+    text-align:center;
+}
+
+.preloader-flower{
+    display:block;
+    width:min(60%,200px);
+    height:auto;
+    margin:0 auto 6px;
+    object-fit:contain;
+    opacity:.96;
+}
+
+.preloader-names{
+    margin:0;
+    font:400 clamp(46px,12vw,58px)/1 'Great Vibes',cursive;
+    color:var(--navy);
+}
+
+.preloader-names span{
+    color:var(--blue-500);
+}
+
+.preloader-loader{
+    margin-top:28px;
+}
+
+/* =====================================================
+   FOTO COVER FULL SCREEN — AKTIF
+   Cover memakai foto sendiri sebagai latar penuh.
+   Ganti file assets/images/cover.jpg dengan foto pilihan
+   Anda (disarankan orientasi potret/vertikal, minimal
+   1200x1600px, agar tetap tajam di layar HP).
+===================================================== */
+#cover{
+    background:#0f2436;
+}
+
+.cover-photo{
+    display:block !important;
+}
+
+.cover-overlay{
+    display:block !important;
+    background:linear-gradient(
+        180deg,
+        rgba(10,26,42,.20) 0%,
+        rgba(10,26,42,.10) 38%,
+        rgba(10,26,42,.62) 100%
+    ) !important;
+}
+
+#cover .door{
+    display:none !important;
+}
+
+.cover-flower-wrap{
+    display:none;
+}
+
+#cover .cover-content{
+    top:64%;
+    z-index:10;
+}
+
+#cover .cover-kicker{
+    color:#eaf4fb;
+    text-shadow:0 1px 10px rgba(0,0,0,.45);
+}
+
+#cover .cover-names{
+    color:#ffffff;
+    text-shadow:0 4px 22px rgba(0,0,0,.45);
+}
+
+#cover .cover-names span{
+    color:var(--blue-300);
+}
+
+#cover .cover-date{
+    color:#eaf4fb;
+    text-shadow:0 1px 10px rgba(0,0,0,.4);
+}
+
+#cover .guest-box{
+    background:rgba(255,255,255,.90);
+}
+
+/* Bunga pada Home */
+.hero-section{
+    padding-top:72px;
+}
+
+.hero-flower-wrap{
+    width:min(100%,250px);
+    margin:0 auto 4px;
+}
+
+.hero-flower-wrap img{
+    display:block;
+    width:100%;
+    height:auto;
+    opacity:.86;
+}
+
+.hero-section .eyebrow{
+    margin-top:-2px;
+}
+
+/* Ikon musik: not musik, bukan disc */
+.music-icon{
+    width:22px;
+    height:22px;
+    color:var(--blue-600);
+    display:block;
+}
+
+.music-button.is-playing .music-icon{
+    animation:musicPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes musicPulse{
+    0%,100%{transform:scale(1) rotate(0)}
+    50%{transform:scale(1.08) rotate(-3deg)}
+}
+
+@media (max-width:430px){
+    .preloader-flower{
+        width:min(92vw,350px);
+        margin-bottom:4px;
+    }
+
+    .preloader-names{
+        font-size:50px;
+    }
+
+    .preloader-loader{
+        margin-top:24px;
+    }
+
+    .cover-flower-wrap{
+        top:27%;
+        width:96%;
+    }
+
+    #cover .cover-content{
+        top:64%;
+        width:90%;
+    }
+
+    .hero-flower-wrap{
+        width: 170px;;
+        margin-left:0;
+        margin-bottom:2px;
+    }
+
+    .hero-section{
+        min-height:790px;
+    }
+
+    .music-disc{
+        display:none !important;
+    }
+}
+
+#petals{
+    position:fixed;
+    inset:0;
+    height:100vh;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:3;
+}
+
+.petal-sway{
+    position:absolute;
+    top:-6vh;
+    animation:petalSway linear infinite;
+}
+
+.petal{
+    display:block;
+    border-radius:60% 0 60% 0;
+    animation:petalFall linear forwards;
+}
+
+.petal-white{background:linear-gradient(135deg,#f1dfa8,#c9a86a);opacity:.85}
+.petal-blue{background:linear-gradient(135deg,var(--blue-300),var(--blue-500));opacity:.7}
+.petal-gold{background:linear-gradient(135deg,#f1dfa8,var(--gold,#c9a86a));opacity:.85}
+
+@keyframes petalFall{
+    0%{ transform:translateY(0) rotate(0deg); opacity:0; }
+    8%{ opacity:1; }
+    92%{ opacity:.9; }
+    100%{ transform:translateY(120vh) rotate(340deg); opacity:0; }
+}
+
+@keyframes petalSway{
+    0%,100%{ transform:translateX(0); }
+    50%{ transform:translateX(var(--drift,50px)); }
+}
+
+@media (prefers-reduced-motion:reduce){
+    #petals{ display:none; }
+}

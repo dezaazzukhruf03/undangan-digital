@@ -1,0 +1,51 @@
+/* =====================================================
+   RESPONSIVE.CSS
+===================================================== */
+
+@media (max-width:700px){
+    .side-nav{right:10px}
+    .music-button{right:10px}
+}
+
+@media (max-width:430px){
+    main{box-shadow:none}
+    .section{padding:76px 0}
+    .section-inner{width:88%}
+    .cover-names{font-size:57px}
+    .script-title{font-size:52px}
+    .section-title{font-size:35px}
+    .hero-section{min-height:730px}
+    .countdown{gap:6px}
+    .count-box{padding:13px 3px}
+    .count-box strong{font-size:24px}
+    .count-box span{font-size:7px}
+    .portrait-wrap{width:165px;height:165px}
+    .person-card h3{font-size:28px}
+    .side-nav{gap:7px}
+    .nav-item{width:39px;height:39px}
+    .nav-item:hover{width:39px;padding-left:0;justify-content:center;gap:0}
+    .nav-item:hover span{display:none}
+    .music-button{bottom:16px;width:43px;height:43px}
+}
+
+@media (max-width:360px){
+    .cover-names{font-size:51px}
+    .guest-box{min-width:250px;padding:12px 18px}
+    .section-title{font-size:31px}
+    .script-title{font-size:48px}
+    .count-box strong{font-size:21px}
+}
+
+@media (orientation:landscape) and (max-height:600px){
+    .cover-content{padding:18px}
+    .cover-names{font-size:46px;margin:8px 0}
+    .guest-box{margin:12px 0}
+    #openInvitation{min-height:42px}
+}
+
+@supports (padding:max(0px)){
+    body{
+        padding-left:max(0px,env(safe-area-inset-left));
+        padding-right:max(0px,env(safe-area-inset-right));
+    }
+}

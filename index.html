@@ -1,549 +1,505 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#8ebfe2">
+    <meta name="description" content="Undangan pernikahan Lara & Deza, 24 Oktober 2026.">
+    <meta property="og:title" content="The Wedding of Lara & Deza">
+    <meta property="og:description" content="Undangan pernikahan Lara & Deza — 24 Oktober 2026.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/cover.webp">
+    <meta property="og:url" content="https://GANTI-DENGAN-DOMAIN-KAMU/">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="The Wedding of Lara & Deza">
+    <meta property="twitter:description" content="Undangan pernikahan Lara & Deza — 24 Oktober 2026.">
+    <meta property="twitter:image" content="https://GANTI-DENGAN-DOMAIN-KAMU/assets/images/cover.webp">
 
-  <title>Eka & Arian | Akad Nikah & Resepsi</title>
+    <title>The Wedding of Lara & Deza</title>
 
-<meta name="description"
-      content="Undangan Pernikahan Eka & Arian. Jumat, 04 September 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<meta property="og:type" content="website">
-
-<meta property="og:title"
-      content="Eka & Arian | Akad Nikah & Resepsi">
-
-<meta property="og:description"
-      content="Jumat, 04 September 2026 • Dengan hormat mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu.">
-
-<meta property="og:image"
-      content="https://laradeza-wedding.vercel.app/images/og.jpg">
-
-<meta property="og:image:width" content="1200">
-
-<meta property="og:image:height" content="630">
-
-<meta property="og:image:type" content="image/jpeg">
-
-<meta property="og:image:alt" content="Eka & Arian Wedding Invitation">
-
-<meta property="og:url"
-      content="https://laradeza-wedding.vercel.app/">
-
-<meta property="og:site_name"
-      content="Wedding Invitation">
-
-<meta property="og:locale"
-      content="id_ID">
-
-<meta name="twitter:card"
-      content="summary_large_image">
-
-  <link rel="stylesheet" href="style.css">
-
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- ICON -->
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
-<body>
 
-    <div id="petals"></div>
+<body class="is-locked">
+    <div id="petals" aria-hidden="true"></div>
 
-    <!-- PRELOADER -->
-<div id="preloader">
-
-    <div class="loader-content">
-
-        <div class="rumah-gadang">
-            <img src="images/rumah-gadang.webp" alt="Rumah Gadang">
+<!-- PRELOADER -->
+<div id="preloader" aria-label="Memuat undangan">
+    <div class="preloader-inner">
+        <img
+            class="preloader-flower"
+            src="assets/images/bunga-biru.png"
+            alt=""
+            aria-hidden="true">
+        <h1 class="preloader-names">
+            Lara <span>&amp;</span> Deza
+        </h1>
+        <div class="preloader-loader">
+            <div class="preloader-track">
+                <span id="loaderProgress"></span>
+            </div>
+            <div class="preloader-bottom">
+                <span>Preparing your invitation</span>
+                <strong id="loaderPercent">0%</strong>
+            </div>
         </div>
-
-        <h2>Eka & Arian</h2>
-
-        <p>Memuat Undangan...</p>
-
-        <div class="loader-spinner"></div>
-
     </div>
-
 </div>
 
-    <div id="cover-screen">
-        <div class="cover-box">
-
-    <img src="images/gabungkartun1.webp" class="cover-image" alt="Cover">
-
-    <div class="cover-overlay"></div>
+<!-- ==========================================
+     COVER
+========================================== -->
+<section id="cover" aria-label="Cover undangan">
+    <div class="cover-photo" aria-hidden="true">
+        <img src="assets/images/cover.webp" alt="">
+    </div>
+    <div class="cover-overlay" aria-hidden="true"></div>
 
     <div class="cover-content">
+        <p class="cover-kicker">THE WEDDING OF</p>
 
-        <h4>THE WEDDING OF</h4>
-
-        <h1>Eka & Arian</h1>
+        <h1 class="cover-names">
+            Lara <span>&amp;</span> Deza
+        </h1>
 
         <p class="cover-date">
             Jumat, 04 September 2026
         </p>
 
-        <div class="guest-box">
-            <p>Kepada Yth.</p>
-            <h3 id="guestName">Tamu Undangan</h3>
+        <div class="guest-box" id="guestBox" hidden>
+            <small>Kepada Yth.</small>
+            <strong id="guestName"></strong>
         </div>
 
-        <button id="openInvitation">
-            Buka Undangan
+        <button id="openInvitation" class="primary-button" type="button">
+            <span>Buka Undangan</span>
         </button>
-
     </div>
-
-</div>
-
-         </div>
-    </div>
-
-<div class="container">
-
-  <!-- ORNAMENT -->
-
-  <!-- COVER -->
-  <section id="home" class="hero">
-
-    <h3>THE WEDDING OF</h3>
-
-    <div class="rumah-gadang">
-        <img src="images/rumah-gadang.webp" alt="Rumah Gadang">
-    </div>
-
-    <h1>Eka & Arian</h1>
-
-    <p class="date">
-        Jumat, 04 September 2026
-    </p>
-
-   <p class="intro">
-Dengan penuh rasa syukur kepada Allah SWT,
-kami mengundang Bapak/Ibu/Saudara/i
-untuk hadir dan memberikan doa restu
-pada pernikahan kami.
-</p>
-
-<div class="countdown mini-countdown">
-
-    <div class="time-box">
-        <span id="days">00</span>
-        <small>Hari</small>
-    </div>
-
-    <div class="time-box">
-        <span id="hours">00</span>
-        <small>Jam</small>
-    </div>
-
-    <div class="time-box">
-        <span id="minutes">00</span>
-        <small>Menit</small>
-    </div>
-
-    <div class="time-box">
-        <span id="seconds">00</span>
-        <small>Detik</small>
-    </div>
-
-</div>
-
-    </section>
-
-  <!-- SALAM -->
-  <section id="bride" class="section">
-
-    <div class="ornament-divider">
-  <svg viewBox="0 0 90 26" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,20 C12,2 20,2 32,20 C38,10 40,10 45,20 C50,10 52,10 58,20 C70,2 78,2 90,20"
-          fill="none" stroke="#c89b3c" stroke-width="1.5"/>
-    <rect x="41" y="15" width="8" height="8" fill="#c89b3c" transform="rotate(45 45 19)"/>
-  </svg>
-</div>
-
-    <div class="photo-frame" data-aos="fade-up">
-      <img src="images/gabungkartun2.webp">
-    </div>
-
-    <p class="arabic" data-aos="fade-up">
-        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri,
-        agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
-        <br><strong>(QS. Ar-Rum: 21)</strong>
-    </p>
-
-  </section>
-
-  <!-- BRIDE -->
-  <section class="section">
-
-    <div class="ornament-divider">
-  <svg viewBox="0 0 90 26" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,20 C12,2 20,2 32,20 C38,10 40,10 45,20 C50,10 52,10 58,20 C70,2 78,2 90,20"
-          fill="none" stroke="#c89b3c" stroke-width="1.5"/>
-    <rect x="41" y="15" width="8" height="8" fill="#c89b3c" transform="rotate(45 45 19)"/>
-  </svg>
-</div>
-
-    <div class="profile-card">
-
-      <img src="images/wanitakartun1.webp">
-
-      <h2>Eka Nuriza Anggraini</h2>
-
-      <p>Putri Ke-1 dari</p>
-
-      <p>
-        Bapak Alm. Dermawan Negara & <p>
-        <p>Ibu Alhm. Ulfa Hanifah
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- GROOM -->
-  <section class="section">
-
-    <div class="ornament-divider">
-  <svg viewBox="0 0 90 26" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,20 C12,2 20,2 32,20 C38,10 40,10 45,20 C50,10 52,10 58,20 C70,2 78,2 90,20"
-          fill="none" stroke="#c89b3c" stroke-width="1.5"/>
-    <rect x="41" y="15" width="8" height="8" fill="#c89b3c" transform="rotate(45 45 19)"/>
-  </svg>
-</div>
-
-    <div class="profile-card">
-
-      <img src="images/priakartun1.webp">
-
-      <h2>Arian Andika Putra</h2>
-
-      <p>Putra Ke-1 dari</p>
-
-      <p>
-        Bapak Riyan S &
-        Ibu Ferayanti
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- ACARA -->
-  <section id="event" class="section">
-
-    <div class="ornament-divider">
-  <svg viewBox="0 0 90 26" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,20 C12,2 20,2 32,20 C38,10 40,10 45,20 C50,10 52,10 58,20 C70,2 78,2 90,20"
-          fill="none" stroke="#c89b3c" stroke-width="1.5"/>
-    <rect x="41" y="15" width="8" height="8" fill="#c89b3c" transform="rotate(45 45 19)"/>
-  </svg>
-</div>
-
-<h2 class="title">
-    Akad Nikah & Resepsi
-</h2>
-
-<div class="event-card">
-
-    <a id="addToCalendar"
-       class="add-calendar-btn"
-       target="_blank"
-       rel="noopener">
-        <i class="fa-solid fa-calendar-plus"></i>
-        Tambahkan ke Kalender
-    </a>
-
-    <div class="event-item">
-
-        <h3>Akad Nikah</h3>
-
-        <p>📅 Jumat, 04 September 2026</p>
-        <p>🕘 09.00 WIB</p>
-        <p>
-            📍 Perumnas Mutiara Indah No.09,<br>
-            Lubuk Kilangan, Padang
-        </p>
-
-    </div>
-
-    <hr class="event-divider">
-
-    <div class="event-item">
-
-        <h3>Resepsi</h3>
-
-        <p>📅 Jumat, 04 September 2026</p>
-        <p>🕙 10.00 WIB</p>
-        <p>
-            📍 Perumnas Mutiara Indah No.09,<br>
-            Lubuk Kilangan, Padang
-        </p>
-
-    </div>
-
-</div>
-
-<h2 class="title">Lokasi Acara</h2>
-
-<div class="location-card">
-
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1422.040364798319!2d100.45877642071802!3d-0.9518315808275579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b7cf78cb1985%3A0xcff18e5f233d7879!2sPerumnas%201%20Mutiara%20Indah!5e1!3m2!1sid!2sid!4v1785897421148!5m2!1sid!2sid" 
-        width="100%"
-        height="300"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-
-</div>
-
-  </section>
-
-<!-- HADIAH -->
-<section id="gift" class="section">
-
-    <div class="ornament-divider">
-  <svg viewBox="0 0 90 26" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,20 C12,2 20,2 32,20 C38,10 40,10 45,20 C50,10 52,10 58,20 C70,2 78,2 90,20"
-          fill="none" stroke="#c89b3c" stroke-width="1.5"/>
-    <rect x="41" y="15" width="8" height="8" fill="#c89b3c" transform="rotate(45 45 19)"/>
-  </svg>
-</div>
-
-    <h2 class="title">Hadiah Pernikahan</h2>
-
-    <p class="text">
-        Doa restu Anda merupakan hadiah terindah bagi kami.
-        Namun apabila ingin memberikan tanda kasih, dapat melalui rekening berikut:
-    </p>
-
-    <div class="rekening-card">
-
-    <div class="bank-header">
-
-        <i class="fa-solid fa-building-columns bank-icon"></i>
-
-        <span class="bank-name">
-            BANK BRI
-        </span>
-
-    </div>
-
-    <div class="rekening-body">
-
-        <span id="bri" class="rekening-number">
-            220801010508509
-        </span>
-
-        <button class="copy-icon" onclick="copyRek('bri')">
-            <i class="fa-solid fa-copy"></i>
-        </button>
-
-    </div>
-
-    <p class="rekening-name">
-        a.n Eka Nuriza Anggraini
-    </p>
-
-</div>
-
-
-
-<div class="rekening-card">
-
-    <div class="bank-header">
-
-        <i class="fa-solid fa-building-columns bank-icon"></i>
-
-        <span class="bank-name">
-            BANK BCA
-        </span>
-
-    </div>
-
-    <div class="rekening-body">
-
-        <span id="bca" class="rekening-number">
-            8565412678
-        </span>
-
-        <button class="copy-icon" onclick="copyRek('bca')">
-            <i class="fa-solid fa-copy"></i>
-        </button>
-
-    </div>
-
-    <p class="rekening-name">
-        a.n Eka Nuriza Anggraini
-    </p>
-
-</div>
-
 </section>
 
-<!-- UCAPAN TAMU -->
-<section id="wish" class="section">
-
-    <div class="ornament-divider">
-  <svg viewBox="0 0 90 26" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,20 C12,2 20,2 32,20 C38,10 40,10 45,20 C50,10 52,10 58,20 C70,2 78,2 90,20"
-          fill="none" stroke="#c89b3c" stroke-width="1.5"/>
-    <rect x="41" y="15" width="8" height="8" fill="#c89b3c" transform="rotate(45 45 19)"/>
-  </svg>
-</div>
-
-    <h2 class="title">Ucapan & Doa</h2>
-
-    <form id="wishForm">
-
-    <input
-        type="text"
-        id="nama"
-        placeholder="Nama"
-        required>
-
-    <select id="kehadiran" required>
-        <option value="">Konfirmasi Kehadiran</option>
-        <option value="Hadir">Hadir</option>
-        <option value="Tidak Hadir">Tidak Hadir</option>
-        <option value="Masih Ragu">Masih Ragu</option>
-    </select>
-
-    <textarea
-        id="ucapan"
-        placeholder="Tulis ucapan..."
-        required></textarea>
-
-    <button id="submitWish" type="submit">
-        Kirim Ucapan
-    </button>
-
-</form>
-
-<p id="loading" style="display:none;">
-    Mengirim ucapan...
-</p>
-
-<div class="wish-stats">
-
-    <div class="stat-card">
-        <span id="totalUcapan">0</span>
-        <small>👥 Total</small>
-    </div>
-
-    <div class="stat-card hadir">
-        <span id="totalHadir">0</span>
-        <small>🟢 Hadir</small>
-    </div>
-
-    <div class="stat-card ragu">
-        <span id="totalRagu">0</span>
-        <small>🟡 Ragu</small>
-    </div>
-
-    <div class="stat-card tidak-hadir">
-        <span id="totalTidakHadir">0</span>
-        <small>🔴 Tidak Hadir</small>
-    </div>
-
-</div>
-
-<h3 class="wish-title">
-    Ucapan Terbaru
-</h3>
-
-<div id="wishList">
-    <!-- Semua ucapan akan tampil di sini -->
-</div>
-
-</section>
-
-<!-- BOTTOM NAV -->
-<nav class="bottom-nav">
-
-    <a href="#home">
-        <i class="fa-solid fa-house"></i>
-        <span>Beranda</span>
-    </a>
-
-    <a href="#bride">
-        <i class="fa-solid fa-heart"></i>
-        <span>Mempelai</span>
-    </a>
-
-    <a href="#event">
-        <i class="fa-solid fa-calendar"></i>
-        <span>Acara</span>
-    </a>
-
-    <a href="#gift">
-        <i class="fa-solid fa-gift"></i>
-        <span>Hadiah</span>
-    </a>
-
-    <a href="#wish">
-        <i class="fa-solid fa-comment"></i>
-        <span>Ucapan</span>
-    </a>
-
-</nav>
-
-<!-- PENUTUP -->
-<section class="section closing">
-
-    <div class="ornament-divider">
-  <svg viewBox="0 0 90 26" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,20 C12,2 20,2 32,20 C38,10 40,10 45,20 C50,10 52,10 58,20 C70,2 78,2 90,20"
-          fill="none" stroke="#c89b3c" stroke-width="1.5"/>
-    <rect x="41" y="15" width="8" height="8" fill="#c89b3c" transform="rotate(45 45 19)"/>
-  </svg>
-</div>
-
-    <h2 class="title">Terima Kasih</h2>
-
-    <p class="closing-text">
-        Merupakan suatu kehormatan dan kebahagiaan bagi kami
-        apabila Bapak/Ibu/Saudara/i berkenan hadir
-        dan memberikan doa restu.
-    </p>
-
-    <p class="closing-prayer">
-
-Wassalamu'alaikum
-Warahmatullahi Wabarakatuh
-
-</p>
-
-    <h3 class="closing-name">
-        Eka & Arian
-    </h3>
-
-</section>
-
-</div>
-
-<!-- MUSIC -->
-<audio id="music" loop>
-    <source src="mylove.m4a" type="audio/mp4">
+<!-- AUDIO -->
+<audio id="music" loop preload="metadata">
+    <source src="assets/audio/pernikahan-kita.m4a" type="audio/mp4">
 </audio>
 
-<button id="musicBtn">
-    <i class="fa-solid fa-music"></i>
+<!-- MUSIC BUTTON -->
+<button id="musicButton" class="music-button" type="button" aria-label="Putar musik" aria-pressed="false">
+    <svg class="music-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 18V5l10-2v13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="6.5" cy="18" r="3" fill="currentColor"/>
+        <circle cx="16.5" cy="16" r="3" fill="currentColor"/>
+    </svg>
 </button>
 
-<script src="script.js"></script>
+<!-- SIDE NAV -->
+<nav class="side-nav" aria-label="Navigasi undangan">
+    <a href="#hero" class="nav-item active" aria-label="Home" data-label="Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+        <span>Beranda</span>
+    </a>
+    <a href="#couple" class="nav-item" aria-label="Mempelai" data-label="Mempelai">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="16.5" cy="9" r="2.3"/><path d="M3.5 19c.4-3.4 2.2-5.1 5.5-5.1s5.1 1.7 5.5 5.1"/><path d="M14 14.5c2.9-.5 5.2 1 6 4.5"/></svg>
+        <span>Mempelai</span>
+    </a>
+    <a href="#event" class="nav-item" aria-label="Acara" data-label="Acara">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M7 3v4M17 3v4M3.5 9.5h17M7.5 13h3M7.5 16.5h6"/></svg>
+        <span>Acara</span>
+    </a>
+    <a href="#gallery" class="nav-item" aria-label="Galeri" data-label="Galeri">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8" cy="9" r="1.5"/><path d="m4 17 5-5 3.5 3 2.5-2.5L20 17"/></svg>
+        <span>Galeri</span>
+    </a>
+    <a href="#gift" class="nav-item" aria-label="Hadiah" data-label="Hadiah">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8"/><path d="M3 8h18v4H3z"/><path d="M12 8v13"/><path d="M12 8H8.5a2.5 2.5 0 1 1 0-5C10.7 3 12 8 12 8Z"/><path d="M12 8h3.5a2.5 2.5 0 1 0 0-5C13.3 3 12 8 12 8Z"/></svg>
+        <span>Hadiah</span>
+    </a>
+    <a href="#rsvp" class="nav-item" aria-label="RSVP" data-label="RSVP">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12.5V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7"/><path d="M8 8h8M8 12h5"/><path d="m16 17 2 2 4-4"/></svg>
+        <span>RSVP</span>
+    </a>
+</nav>
 
+<main id="website">
+
+    <!-- HERO -->
+    <section id="hero" class="section hero-section">
+        <div class="section-inner">
+            <div class="hero-flower-wrap reveal" aria-hidden="true">
+                <img src="assets/images/bunga-biru.png" alt="">
+            </div>
+            <p class="eyebrow reveal">THE WEDDING OF</p>
+            <h2 class="script-title reveal delay-1">Lara <span>&amp;</span> Deza</h2>
+            <p class="hero-date reveal delay-2">Sabtu, 24 Oktober 2026</p>
+
+<div class="hero-quote reveal delay-3">
+
+    <div class="quote-arabic">
+
+        وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم
+        مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+
+    </div>
+
+    <div class="quote-divider">
+        ✦
+    </div>
+
+    <p class="quote-translation">
+
+        “Dan di antara tanda-tanda
+        (kebesaran)-Nya ialah Dia
+        menciptakan pasangan-pasangan
+        untukmu dari jenismu sendiri,
+        agar kamu cenderung dan merasa
+        tenteram kepadanya.”
+
+    </p>
+
+    <p class="quote-source">
+        QS. AR-RUM : 21
+    </p>
+
+</div>
+
+            <div id="countdown" class="countdown reveal delay-3" aria-label="Hitung mundur menuju pernikahan">
+                <div class="count-box"><strong id="days">00</strong><span>Hari</span></div>
+                <div class="count-box"><strong id="hours">00</strong><span>Jam</span></div>
+                <div class="count-box"><strong id="minutes">00</strong><span>Menit</span></div>
+                <div class="count-box"><strong id="seconds">00</strong><span>Detik</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COUPLE -->
+    <section id="couple" class="section couple-section">
+        <div class="section-inner">
+            <p class="eyebrow reveal">Mempelai</p>
+            <h2 class="section-title reveal delay-1">Dengan penuh kebahagiaan</h2>
+            <p class="section-lead reveal delay-2">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan kami.</p>
+
+            <div class="couple-grid">
+<!-- SESUDAH -->
+<div class="couple-grid">
+    <article class="person-card reveal">
+        <div class="portrait-wrap">
+            <img src="assets/images/bride.webp" alt="Foto mempelai wanita" loading="lazy">
+        </div>
+        <p class="person-role">Mempelai Wanita</p>
+        <h3>Lara Sagita</h3>
+        <p class="parents">
+Putri dari<br>
+<strong>Bapak Erman</strong>
+<span>&amp;</span>
+<strong>Ibu Titin</strong>
+</p>
+    </article>
+
+    <div class="couple-amp reveal delay-1">&amp;</div>
+
+    <article class="person-card reveal delay-2">
+        <div class="portrait-wrap">
+            <img src="assets/images/groom.webp" alt="Foto mempelai pria" loading="lazy">
+        </div>
+        <p class="person-role">Mempelai Pria</p>
+        <h3>Deza Azzukhruf</h3>
+        <p class="parents">
+Putra dari<br>
+<strong>Bapak Zailani</strong>
+<span>&amp;</span>
+<strong>Ibu Zaipeni</strong>
+</p>
+    </article>
+</div>
+        </div>
+    </section>
+
+    <!-- EVENT -->
+    <section id="event" class="section event-section">
+        <div class="section-inner">
+            <p class="eyebrow reveal">Rangkaian Acara</p>
+            <h2 class="section-title reveal delay-1">Hari yang kami nantikan</h2>
+
+<div class="event-grid">
+
+    <!-- AKAD NIKAH -->
+    <article class="event-card reveal">
+
+        <p class="event-label">
+            Akad Nikah
+        </p>
+
+        <h3>
+            Sabtu, 24 Oktober 2026
+        </h3>
+
+        <p class="event-time">
+            09.00 WIB
+        </p>
+
+<p class="event-place">
+    Tanjung Saba,<br>
+    Kec. Bayang,<br>
+    Kab. Pesisir Selatan
+</p>
+
+<div class="event-map reveal delay-3">
+    <iframe
+        src="https://www.google.com/maps?q=Tanjung%20Saba%2C%20Kec.%20Bayang%2C%20Kab.%20Pesisir%20Selatan&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+    </iframe>
+    <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=Tanjung%20Saba%2C%20Kec.%20Bayang%2C%20Kab.%20Pesisir%20Selatan" target="_blank" rel="noopener noreferrer">Buka di Google Maps</a>
+</div>
+
+<a class="calendar-button reveal delay-4" href="data:text/calendar;charset=utf8,BEGIN%3AVCALENDAR%0AVERSION%3A2.0%0ABEGIN%3AVEVENT%0ASUMMARY%3AAkad%20Nikah%20Lara%20%26%20Deza%0ADTSTART%3A20261024T020000Z%0ADTEND%3A20261024T030000Z%0ALOCATION%3ATanjung%20Saba%5C%2C%20Kec.%20Bayang%5C%2C%20Kab.%20Pesisir%20Selatan%0ADESCRIPTION%3AAkad%20nikah%20Lara%20%26%2  Deza%0AEND%3AVEVENT%0AEND%3AVCALENDAR" download="Akad-Nikah-Lara-Deza.ics">
+    Simpan ke Kalender
+</a>
+
+    </article>
+
+    <!-- RESEPSI -->
+    <article class="event-card reveal">
+
+        <p class="event-label">
+            Resepsi
+        </p>
+
+        <h3>
+            Sabtu, 24 Oktober 2026
+        </h3>
+
+        <p class="event-time">
+    10.00 WIB
+</p>
+
+<p class="event-place">
+    Tanjung Saba,<br>
+    Kec. Bayang,<br>
+    Kab. Pesisir Selatan
+</p>
+
+<div class="event-map reveal delay-3">
+    <iframe
+        src="https://www.google.com/maps?q=Tanjung%20Saba%2C%20Kec.%20Bayang%2C%20Kab.%20Pesisir%20Selatan&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+    </iframe>
+    <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=Tanjung%20Saba%2C%20Kec.%20Bayang%2C%20Kab.%20Pesisir%20Selatan" target="_blank" rel="noopener noreferrer">Buka di Google Maps</a>
+</div>
+
+<a class="calendar-button reveal delay-4" href="data:text/calendar;charset=utf8,BEGIN%3AVCALENDAR%0AVERSION%3A2.0%0ABEGIN%3AVEVENT%0ASUMMARY%3AResepsi%20Pernikahan%20Lara%20%26%20Deza%0ADTSTART%3A20261024T030000Z%0ADTEND%3A20261024T060000Z%0ALOCATION%3ATanjung%20Saba%5C%2C%20Kec.%20Bayang%5C%2C%20Kab.%20Pesisir%20Selatan%0ADESCRIPTION%3AResepsi%20pernikahan%20Lara%20%26%20Deza%0AEND%3AVEVENT%0AEND%3AVCALENDAR" download="Resepsi-Lara-Deza.ics">
+    Simpan ke Kalender
+</a>
+
+    </article>
+
+</div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section gallery-section">
+        <div class="section-inner">
+            <p class="eyebrow reveal">Galeri</p>
+            <h2 class="section-title reveal delay-1">Momen yang kami simpan</h2>
+
+            <div class="gallery-grid">
+                <button class="gallery-item reveal" type="button" data-index="0" data-full="assets/images/gallery1.webp">
+                    <img src="assets/images/gallery1.webp" alt="Galeri 1" loading="lazy">
+                </button>
+                <button class="gallery-item reveal delay-1" type="button" data-index="1" data-full="assets/images/gallery2.webp">
+                    <img src="assets/images/gallery2.webp" alt="Galeri 2" loading="lazy">
+                </button>
+                <button class="gallery-item reveal delay-2" type="button" data-index="2" data-full="assets/images/gallery3.webp">
+                    <img src="assets/images/gallery3.webp" alt="Galeri 3" loading="lazy">
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- GIFT -->
+    <section id="gift" class="section gift-section">
+        <div class="section-inner">
+            <p class="eyebrow reveal">Wedding Gift</p>
+            <h2 class="section-title reveal delay-1">Tanda kasih</h2>
+            <p class="section-lead reveal delay-2">Doa restu Anda adalah hadiah terindah bagi kami. Bagi yang ingin memberikan tanda kasih, dapat melalui rekening berikut.</p>
+
+<div class="gift-list">
+
+    <!-- BCA -->
+    <div class="gift-card reveal delay-2">
+        <div class="gift-bank reveal">BANK BCA</div>
+        <div class="gift-number reveal delay-1" id="rekeningBCA">8565334995</div>
+        <div class="gift-owner reveal delay-2">a.n. Lara Sagita</div>
+        <button type="button" class="gift-copy reveal delay-3" onclick="copyRekening('rekeningBCA', this)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+            <span>Salin Nomor</span>
+        </button>
+    </div>
+
+    <!-- BRI -->
+    <div class="gift-card reveal delay-3">
+        <div class="gift-bank reveal">BANK BRI</div>
+        <div class="gift-number reveal delay-1" id="rekeningBRI">039301041646509</div>
+        <div class="gift-owner reveal delay-2">a.n. Deza Azzukhruf</div>
+        <button type="button" class="gift-copy reveal delay-3" onclick="copyRekening('rekeningBRI', this)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+            <span>Salin Nomor</span>
+        </button>
+    </div>
+
+</div>
+        </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp" class="section rsvp-section">
+        <div class="section-inner">
+            <p class="eyebrow reveal">Konfirmasi Kehadiran</p>
+            <h2 class="section-title reveal delay-1">RSVP &amp; Ucapan</h2>
+
+            <!-- =========================================
+     STATISTIK RSVP
+========================================= -->
+
+<div class="rsvp-statistics reveal">
+
+    <div class="rsvp-stat-title">
+        Konfirmasi Kehadiran
+    </div>
+
+    <div class="rsvp-stat-grid">
+
+        <!-- HADIR -->
+        <div class="rsvp-stat-card">
+
+            <span
+                class="rsvp-stat-number"
+                id="statHadir">
+                0
+            </span>
+
+            <span class="rsvp-stat-label">
+                Hadir
+            </span>
+
+        </div>
+
+
+        <!-- TIDAK HADIR -->
+        <div class="rsvp-stat-card">
+
+            <span
+                class="rsvp-stat-number"
+                id="statTidakHadir">
+                0
+            </span>
+
+            <span class="rsvp-stat-label">
+                Tidak Hadir
+            </span>
+
+        </div>
+
+
+        <!-- MASIH RAGU -->
+        <div class="rsvp-stat-card">
+
+            <span
+                class="rsvp-stat-number"
+                id="statRagu">
+                0
+            </span>
+
+            <span class="rsvp-stat-label">
+                Masih Ragu
+            </span>
+
+        </div>
+
+
+        <!-- TOTAL -->
+        <div class="rsvp-stat-card">
+
+            <span
+                class="rsvp-stat-number"
+                id="statTotal">
+                0
+            </span>
+
+            <span class="rsvp-stat-label">
+                Total
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+            <form id="rsvpForm" class="rsvp-form reveal delay-2">
+                <label>
+                    Nama
+                    <input id="rsvpName" name="name" type="text" autocomplete="name" placeholder="Nama lengkap" required maxlength="60">
+                </label>
+
+                <label>
+                    Konfirmasi Kehadiran
+                    <select id="rsvpStatus" name="status">
+                        <option value="Hadir"> Akan Hadir</option>
+                        <option value="Tidak Hadir">Belum Bisa Hadir</option>
+                        <option value="Ragu">Masih Ragu</option>
+                    </select>
+                </label>
+
+                <label>
+                    Ucapan &amp; Doa
+                    <textarea id="rsvpMessage" name="message" placeholder="Tuliskan ucapan dan doa..." maxlength="300"></textarea>
+                </label>
+
+                <button class="primary-button form-button" type="submit">Kirim Ucapan</button>
+                <p id="formMessage" class="form-message" aria-live="polite"></p>
+            </form>
+
+            <div id="wishList" class="wish-list"></div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <p class="eyebrow reveal">Terima kasih</p>
+        <h2 class="script-title reveal delay-1">Deza <span>&amp;</span> Lara</h2>
+        <p class="reveal delay-2">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Anda berkenan hadir dan memberikan doa restu.</p>
+        <small class="reveal delay-3">Made with love · 2026</small>
+    </div>
+</footer>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lightboxClose" class="lightbox-close" type="button" aria-label="Tutup">&times;</button>
+    <button id="lightboxPrev" class="lightbox-arrow prev" type="button" aria-label="Foto sebelumnya">&#10094;</button>
+    <figure>
+        <img id="lightboxImage" src="" alt="Foto galeri">
+    </figure>
+    <button id="lightboxNext" class="lightbox-arrow next" type="button" aria-label="Foto berikutnya">&#10095;</button>
+</div>
+
+<script src="js/preloader.js" defer></script>
+<script src="js/countdown.js" defer></script>
+<script src="js/music.js" defer></script>
+<script src="js/gallery.js" defer></script>
+<script src="js/script.js" defer></script>
+<script src="js/petals.js" defer></script>
 </body>
 </html>
