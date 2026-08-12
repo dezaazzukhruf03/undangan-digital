@@ -69,7 +69,7 @@
         </h1>
 
         <p class="cover-date">
-            Jumat, 04 September 2026
+            Sabtu, 24 Oktober 2026
         </p>
 
         <div class="guest-box" id="guestBox" hidden>
@@ -334,28 +334,41 @@ Putra dari<br>
 
 <div class="gift-list">
 
-    <!-- BCA -->
-    <div class="gift-card reveal delay-2">
-        <div class="gift-bank reveal">BANK BCA</div>
-        <div class="gift-number reveal delay-1" id="rekeningBCA">8565334995</div>
-        <div class="gift-owner reveal delay-2">a.n. Lara Sagita</div>
-        <button type="button" class="gift-copy reveal delay-3" onclick="copyRekening('rekeningBCA', this)">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-            <span>Salin Nomor</span>
-        </button>
+    <div class="atm-card reveal delay-2">
+        <div class="atm-card-top">
+            <div class="atm-chip" aria-hidden="true"></div>
+            <div class="atm-bank">BANK BRI</div>
+        </div>
+        <div class="atm-number reveal delay-1" id="rekeningBRI">0393 0104 1646 509</div>
+        <div class="atm-card-bottom">
+            <div class="atm-owner">
+                <span class="atm-owner-label">Card Holder</span>
+                <span class="atm-owner-name">Deza Azzukhruf</span>
+            </div>
+            <button type="button" class="atm-copy" onclick="copyRekening('rekeningBRI', this)" aria-label="Salin nomor rekening BRI">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+            </button>
+        </div>
     </div>
 
-    <!-- BRI -->
-    <div class="gift-card reveal delay-3">
-        <div class="gift-bank reveal">BANK BRI</div>
-        <div class="gift-number reveal delay-1" id="rekeningBRI">039301041646509</div>
-        <div class="gift-owner reveal delay-2">a.n. Deza Azzukhruf</div>
-        <button type="button" class="gift-copy reveal delay-3" onclick="copyRekening('rekeningBRI', this)">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-            <span>Salin Nomor</span>
-        </button>
+    <div class="atm-card reveal delay-3">
+        <div class="atm-card-top">
+            <div class="atm-chip" aria-hidden="true"></div>
+            <div class="atm-bank">BANK BCA</div>
+        </div>
+        <div class="atm-number reveal delay-1" id="rekeningBCA">8565 3349 95</div>
+        <div class="atm-card-bottom">
+            <div class="atm-owner">
+                <span class="atm-owner-label">Card Holder</span>
+                <span class="atm-owner-name">Lara Sagita</span>
+            </div>
+            <button type="button" class="atm-copy" onclick="copyRekening('rekeningBCA', this)" aria-label="Salin nomor rekening BCA">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+            </button>
+        </div>
     </div>
 
+</div>
 </div>
         </div>
     </section>
@@ -501,5 +514,6 @@ Putra dari<br>
 <script src="js/gallery.js" defer></script>
 <script src="js/script.js" defer></script>
 <script src="js/petals.js" defer></script>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

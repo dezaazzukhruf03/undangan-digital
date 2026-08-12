@@ -608,7 +608,7 @@ const updateRsvpStatistics = data => {
 
             else if (
                 status ===
-                    "masih ragu"
+                    "ragu"
             ) {
 
                 ragu++;
@@ -652,88 +652,60 @@ const updateRsvpStatistics = data => {
    RENDER UCAPAN
 -------------------------------- */
 
+let allWishesData = [];
+const WISH_PAGE_SIZE = 3;
+let wishVisibleCount = WISH_PAGE_SIZE;
+
 const renderWishes = data => {
 
     if (!list) {
         return;
     }
 
-
-    if (
-        !Array.isArray(data) ||
-        data.length === 0
-    ) {
-
-        list.innerHTML = `
-            <p class="wish-empty">
-                Belum ada ucapan.
-            </p>
-        `;
-
+    if (!Array.isArray(data) || data.length === 0) {
+        list.innerHTML = `<p class="wish-empty">Belum ada ucapan.</p>`;
         return;
     }
 
     updateRsvpStatistics(data);
 
-    list.innerHTML =
-        data
-            .slice()
-            .reverse()
-            .map(item => {
+    allWishesData = data.slice().reverse();
+    wishVisibleCount = WISH_PAGE_SIZE;
+    renderWishPage();
+};
 
-                return `
+const renderWishPage = () => {
 
-                    <article class="wish-item">
+    const visible = allWishesData.slice(0, wishVisibleCount);
 
-                        <div class="wish-head">
+    const itemsHtml = visible.map(item => `
+        <article class="wish-item">
+            <div class="wish-head">
+                <span class="wish-name">${escapeHtml(item.nama)}</span>
+                <span class="wish-status">${escapeHtml(item.kehadiran)}</span>
+            </div>
+            ${item.ucapan ? `<p class="wish-text">${escapeHtml(item.ucapan)}</p>` : ""}
+            ${item.waktu ? `<small class="wish-time">${formatDate(item.waktu)}</small>` : ""}
+        </article>
+    `).join("");
 
-                            <span class="wish-name">
-                                ${escapeHtml(
-                                    item.nama
-                                )}
-                            </span>
+    const hasMore = allWishesData.length > wishVisibleCount;
 
-                            <span class="wish-status">
-                                ${escapeHtml(
-                                    item.kehadiran
-                                )}
-                            </span>
+    list.innerHTML = itemsHtml + (
+        hasMore
+            ? `<button type="button" id="wishLoadMore" class="wish-load-more">
+                   Muat Ucapan Lainnya (${allWishesData.length - wishVisibleCount})
+               </button>`
+            : ""
+    );
 
-                        </div>
-
-
-                        ${
-                            item.ucapan
-                                ? `
-                                    <p class="wish-text">
-                                        ${escapeHtml(
-                                            item.ucapan
-                                        )}
-                                    </p>
-                                `
-                                : ""
-                        }
-
-
-                        ${
-                            item.waktu
-                                ? `
-                                    <small class="wish-time">
-                                        ${formatDate(
-                                            item.waktu
-                                        )}
-                                    </small>
-                                `
-                                : ""
-                        }
-
-                    </article>
-
-                `;
-
-            })
-            .join("");
-
+    const loadMoreBtn = document.getElementById("wishLoadMore");
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", () => {
+            wishVisibleCount += WISH_PAGE_SIZE;
+            renderWishPage();
+        });
+    }
 };
 
 
@@ -1245,79 +1217,61 @@ loadWishes();
 ===================================================== */
 
 function copyRekening(id, button) {
+    const element = document.getElementById(id);
+    if (!element) return;
 
-    const element =
-        document.getElementById(id);
-
-
-    if (!element) {
-        return;
-    }
-
-
-    const nomor =
-        element.innerText.trim();
-
+    const nomor = element.innerText.replace(/\s+/g, "").trim();
 
     const showCopied = () => {
-
         if (!button) return;
-
-        const label =
-            button.querySelector("span");
-
-        const original =
-            label ? label.textContent : "";
-
         button.classList.add("is-copied");
-
-        if (label) {
-            label.textContent = "Tersalin";
-        }
-
+        showToast("Nomor rekening berhasil disalin");
         clearTimeout(button._copyTimeout);
-
         button._copyTimeout = setTimeout(() => {
             button.classList.remove("is-copied");
-            if (label) {
-                label.textContent = original;
-            }
         }, 1800);
     };
 
-
-    navigator.clipboard
-        .writeText(nomor)
-
-        .then(() => {
-
-            showCopied();
-
-        })
-
+    navigator.clipboard.writeText(nomor)
+        .then(showCopied)
         .catch(() => {
-
-            const area =
-                document.createElement(
-                    "textarea"
-                );
-
-            area.value =
-                nomor;
-
-            document.body
-                .appendChild(area);
-
+            const area = document.createElement("textarea");
+            area.value = nomor;
+            document.body.appendChild(area);
             area.select();
-
-            document.execCommand(
-                "copy"
-            );
-
+            document.execCommand("copy");
             area.remove();
-
             showCopied();
-
         });
+}
 
+const toastEl = document.getElementById("toast");
+let toastTimeout;
+
+const showToast = message => {
+    if (!toastEl) return;
+    toastEl.textContent = message;
+    toastEl.classList.add("is-visible");
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+        toastEl.classList.remove("is-visible");
+    }, 2200);
+};
+
+// Notifikasi saat ucapan RSVP terkirim / gagal
+const formMessageEl = document.getElementById("formMessage");
+if (formMessageEl) {
+    let lastMessage = "";
+    const messageObserver = new MutationObserver(() => {
+        const text = formMessageEl.textContent.trim();
+        if (text && text !== lastMessage) {
+            showToast(text);
+        }
+        lastMessage = text;
+    });
+    messageObserver.observe(formMessageEl, {
+        childList: true,
+        characterData: true,
+        subtree: true
+    });
 }
