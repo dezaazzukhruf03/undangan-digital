@@ -329,6 +329,9 @@ setTimeout(() => {
                             )
                         );
 
+                    setActive(
+                        item.getAttribute("href").slice(1)
+                    );
 
                     target?.scrollIntoView({
                         behavior:
