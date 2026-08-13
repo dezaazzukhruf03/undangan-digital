@@ -30,7 +30,7 @@
         "https://script.google.com/macros/s/AKfycbwrHji0oU0VPiLM7lhkhGMd53HvzZJplOXwqRYE-ox-z_f4rGo1FluF_EgG6mU6Bpc/exec";
 
     const SHEET_NAME =
-        "Deza-Lara";
+        "Lara-Deza";
 
 
     /* =====================================================
