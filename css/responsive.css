@@ -1,51 +1,101 @@
-/* =====================================================
-   RESPONSIVE.CSS
-===================================================== */
+/* ==========================================================================
+   RESPONSIVE.CSS - Breakpoint Tweaks for Screen Sizes
+   Note: High focus on strictly keeping card proportions inside .mobile-wrapper
+   ========================================================================== */
 
-@media (max-width:700px){
-    .side-nav{right:10px}
-    .music-button{right:10px}
+/* Very Small Mobile Screens (< 360px) */
+@media screen and (max-width: 360px) {
+    .bride-groom-title {
+        font-size: 3rem;
+    }
+    
+    .section-title-script {
+        font-size: 2.8rem;
+    }
+
+    .countdown-item {
+        max-width: 62px;
+    }
+
+    .countdown-item span {
+        font-size: 1.1rem;
+    }
+
+    .nav-pill {
+        gap: 10px;
+        padding: 6px 12px;
+    }
+
+    .nav-item {
+        font-size: 0.95rem;
+    }
+
+    .cover-oval-card {
+        width: 92%;
+        min-height: 420px;
+        border-radius: 120px;
+    }
+
+    .cover-oval-text {
+        padding: 60px 18px 36px;
+    }
+
+    .section-photo-decor {
+        width: 56px;
+        height: 76px;
+    }
+
+    .couple-grid {
+        gap: 10px;
+    }
 }
 
-@media (max-width:430px){
-    main{box-shadow:none}
-    .section{padding:76px 0}
-    .section-inner{width:88%}
-    .cover-names{font-size:57px}
-    .script-title{font-size:52px}
-    .section-title{font-size:35px}
-    .hero-section{min-height:730px}
-    .countdown{gap:6px}
-    .count-box{padding:13px 3px}
-    .count-box strong{font-size:24px}
-    .count-box span{font-size:7px}
-    .portrait-wrap{width:165px;height:165px}
-    .person-card h3{font-size:28px}
-    .side-nav{gap:7px}
-    .nav-item{width:39px;height:39px}
-    .nav-item:hover{width:39px;padding-left:0;justify-content:center;gap:0}
-    .nav-item:hover span{display:none}
-    .music-button{bottom:16px;width:43px;height:43px}
-}
+/* Landscape mode or Tablet/Desktop wrapper styling */
+@media screen and (min-width: 451px) {
+    :root {
+        /* Satu sumber angka jarak kanan, dipakai semua elemen di bawah,
+           supaya tidak mungkin ada yang "meleset" beda angka */
+        --desktop-gutter: 0px;
+    }
 
-@media (max-width:360px){
-    .cover-names{font-size:51px}
-    .guest-box{min-width:250px;padding:12px 18px}
-    .section-title{font-size:31px}
-    .script-title{font-size:48px}
-    .count-box strong{font-size:21px}
-}
+    body {
+        background-color: #0b1329;
+        /* Sebelumnya "center" — sekarang kartu HP digeser ke kanan layar laptop */
+        justify-content: flex-end;
+        padding-right: 0;
+    }
 
-@media (orientation:landscape) and (max-height:600px){
-    .cover-content{padding:18px}
-    .cover-names{font-size:46px;margin:8px 0}
-    .guest-box{margin:12px 0}
-    #openInvitation{min-height:42px}
-}
+    /* margin:0 auto pada .mobile-wrapper (di style.css) membuatnya tetap
+       "auto-center" walau parent flex sudah diset flex-end, jadi di-reset
+       di sini supaya benar-benar nempel kanan dengan jarak --desktop-gutter */
+    .mobile-wrapper {
+        margin: 0 var(--desktop-gutter) 0 0;
+    }
 
-@supports (padding:max(0px)){
-    body{
-        padding-left:max(0px,env(safe-area-inset-left));
-        padding-right:max(0px,env(safe-area-inset-right));
+    /* Elemen position:fixed di bawah ini posisinya relatif ke VIEWPORT,
+       bukan ke .mobile-wrapper, jadi harus disamakan manual pakai variabel
+       yang sama supaya tetap pas menutupi .mobile-wrapper yang digeser kanan */
+    .cover-screen {
+        left: auto;
+        right: var(--desktop-gutter);
+        transform: none;
+    }
+
+    .cover-screen.opened {
+        transform: translateY(-100%);
+    }
+
+    .floating-nav {
+        left: auto;
+        right: var(--desktop-gutter);
+        transform: none;
+    }
+
+    .floating-nav.hide-nav {
+        transform: translateY(20px);
+    }
+
+    .music-floating-container {
+        right: calc(var(--desktop-gutter) + 15px);
     }
 }

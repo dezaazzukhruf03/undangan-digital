@@ -1,40 +1,58 @@
-/* =====================================================
-   MUSIC.JS
-===================================================== */
+/**
+ * MUSIC.JS - Controls background audio play / pause & button state
+ */
+const MusicController = {
+    audio: null,
+    btn: null,
+    isPlaying: false,
 
-(() => {
-    const audio = document.getElementById("music");
-    const button = document.getElementById("musicButton");
+    init: function() {
+        this.audio = document.getElementById('bg-music');
+        this.btn = document.getElementById('music-toggle');
 
-    if (!audio || !button) return;
-
-    const setState = playing => {
-        button.classList.toggle("is-playing", playing);
-        button.setAttribute("aria-pressed", String(playing));
-        button.setAttribute("aria-label", playing ? "Jeda musik" : "Putar musik");
-    };
-
-    const play = async () => {
-        try {
-            await audio.play();
-            setState(true);
-        } catch {
-            setState(false);
+        if (this.btn && this.audio) {
+            this.btn.addEventListener('click', () => this.toggle());
         }
-    };
+    },
 
-    const pause = () => {
-        audio.pause();
-        setState(false);
-    };
+    play: function() {
+        if (!this.audio) return;
+        this.audio.play().then(() => {
+            this.isPlaying = true;
+            this.updateIcon();
+        }).catch((err) => {
+            console.log("Autoplay prevented or audio file missing: ", err);
+            this.isPlaying = false;
+            this.updateIcon();
+        });
+    },
 
-    window.addEventListener("invitation:open", play);
+    pause: function() {
+        if (!this.audio) return;
+        this.audio.pause();
+        this.isPlaying = false;
+        this.updateIcon();
+    },
 
-    button.addEventListener("click", () => {
-        if (audio.paused) play();
-        else pause();
-    });
+    toggle: function() {
+        if (this.isPlaying) {
+            this.pause();
+        } else {
+            this.play();
+        }
+    },
 
-    audio.addEventListener("play", () => setState(true));
-    audio.addEventListener("pause", () => setState(false));
-})();
+    updateIcon: function() {
+        if (!this.btn) return;
+        const icon = this.btn.querySelector('i');
+        if (this.isPlaying) {
+            icon.classList.add('fa-spin-music');
+            this.btn.style.color = '#c5a880';
+        } else {
+            icon.classList.remove('fa-spin-music');
+            this.btn.style.color = '#a0aec0';
+        }
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => MusicController.init());
