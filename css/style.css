@@ -1497,7 +1497,7 @@ body.no-scroll {
 
 .gift-edge-jam-gadang {
     position: absolute;
-    top: 22%;
+    top: 40%;
     left: -120px;
     height: auto;
     width: 350px;
@@ -1535,6 +1535,15 @@ body.no-scroll {
     transform: scaleX(-1); /* Membalik gambar secara horizontal */
 }
 .gift-edge-image.right { 
+    right: -30%;
+}
+.gift-edge-image.left2 { 
+    top: 25%;
+    left: -30%; 
+    transform: scaleX(-1); /* Membalik gambar secara horizontal */
+}
+.gift-edge-image.right2 { 
+    top: 25%;
     right: -30%;
 }
 
