@@ -337,6 +337,7 @@
 }
 .atm-card.in-view:nth-child(1) { opacity: 1; transform: translateY(0) rotateX(0); transition-delay: 0s; }
 .atm-card.in-view:nth-child(2) { opacity: 1; transform: translateY(0) rotateX(0); transition-delay: 0.22s; }
+.atm-card.in-view:nth-child(3) { opacity: 1; transform: translateY(0) rotateX(0); transition-delay: 0.44s; }
 .atm-card.out-view { opacity: 0; transform: translateY(-25px) rotateX(8deg); transition-delay: 0s; }
 .atm-card::after {
     content: '';
